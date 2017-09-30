@@ -4,7 +4,7 @@ config.tx_extbase.persistence.classes {
         columns {
             starttime.mapOnProperty = starttime
             endtime.mapOnProperty = endtime
-            tstamp.mapOnProperty = lastmod
+            tstamp.mapOnProperty = tstamp
             crdate.mapOnProperty = crdate
         }
     }
