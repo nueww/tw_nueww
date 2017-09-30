@@ -26,18 +26,40 @@
 namespace Tollwerk\TwNueww\Controller\Blog;
 
 
+use Tollwerk\TwNueww\Domain\Model\Blog\Article;
+use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class ArticleController extends ActionController
 {
+    /**
+     * @var ArticleRepository
+     */
     protected $articleRepository = null;
 
-
-    public function listAction(){
-
+    /**
+     * Inject the article repository
+     *
+     * @param ArticleRepository $articleRepository
+     */
+    public function injectArticleRepository(ArticleRepository $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
     }
 
-    public function showAction(){
+    /**
+     * List action
+     */
+    public function listAction(){
+        $articles = $this->articleRepository->findAll();
+        $this->view->assign('articles',$articles);
+    }
 
+    /**
+     * Show action
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Article $article
+     */
+    public function showAction(Article $article = null){
+        $this->view->assign('article', $article);
     }
 }

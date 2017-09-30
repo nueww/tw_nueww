@@ -10,6 +10,10 @@
 			<trans-unit id="flux.standard.description">
 				<source>Normale Seite mit einem Inhaltsbereich.</source>
 			</trans-unit>
+
+			<trans-unit id="blog.backToList">
+				<source>Zurück zur Liste</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>
