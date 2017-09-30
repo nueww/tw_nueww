@@ -25,10 +25,13 @@
 
 namespace Tollwerk\TwNueww\Domain\Model\Blog;
 
+use Tollwerk\TwNueww\Domain\Model\Traits\ImageTrait;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Article extends AbstractEntity
 {
+    use ImageTrait;
+
     /**
      * @var string
      */
@@ -37,7 +40,32 @@ class Article extends AbstractEntity
     /**
      * @var string
      */
+    protected $teaserText = '';
+
+    /**
+     * @var string
+     */
     protected $bodyText = '';
+
+    /**
+     * @var int
+     */
+    protected $starttime = 0;
+
+    /**
+     * @var int
+     */
+    protected $endtime = 0;
+
+    /**
+     * @var int
+     */
+    protected $crdate = 0;
+
+    /**
+     * @var int
+     */
+    protected $tstamp = 0;
 
     /**
      * @return string
@@ -58,6 +86,23 @@ class Article extends AbstractEntity
     /**
      * @return string
      */
+    public function getTeaserText()
+    {
+        return $this->teaserText;
+    }
+
+    /**
+     * @param string $teaserText
+     */
+    public function setTeaserText($teaserText)
+    {
+        $this->teaserText = $teaserText;
+    }
+
+
+    /**
+     * @return string
+     */
     public function getBodyText()
     {
         return $this->bodyText;
@@ -70,6 +115,74 @@ class Article extends AbstractEntity
     {
         $this->bodyText = $bodyText;
     }
+
+    /**
+     * @return int
+     */
+    public function getStarttime()
+    {
+        return $this->starttime;
+    }
+
+    /**
+     * @param int $starttime
+     */
+    public function setStarttime($starttime)
+    {
+        $this->starttime = $starttime;
+    }
+
+    /**
+     * @return int
+     */
+    public function getEndtime()
+    {
+        return $this->endtime;
+    }
+
+    /**
+     * @param int $endtime
+     */
+    public function setEndtime($endtime)
+    {
+        $this->endtime = $endtime;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCrdate()
+    {
+        return $this->crdate;
+    }
+
+    /**
+     * @param int $crdate
+     */
+    public function setCrdate($crdate)
+    {
+        $this->crdate = $crdate;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTstamp()
+    {
+        return $this->tstamp;
+    }
+
+    /**
+     * @param int $tstamp
+     */
+    public function setTstamp($tstamp)
+    {
+        $this->tstamp = $tstamp;
+    }
+
+
+
+
 
 
 }

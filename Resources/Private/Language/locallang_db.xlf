@@ -34,11 +34,17 @@
 			<trans-unit id="tx_twnueww_domain_model_blog_article">
 				<source>Blog article</source>
 			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_article.title">
+			<trans-unit id="tx_twnueww_domain_model_blog_article.title">
 				<source>Title</source>
 			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_article.body_text">
+			<trans-unit id="tx_twnueww_domain_model_blog_article.teaser_text">
+				<source>Teaser text</source>
+			</trans-unit>
+			<trans-unit id="tx_twnueww_domain_model_blog_article.body_text">
 				<source>Body text</source>
+			</trans-unit>
+			<trans-unit id="tx_twnueww_domain_model_blog_article.images">
+				<source>Images</source>
 			</trans-unit>
         </body>
     </file>
