@@ -1,30 +1,32 @@
 <?php
 return array(
     'ctrl' => array(
-        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article',
-        'label' => 'title',
+        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person',
+        'label' => 'last_name',
+        'label_alt' => 'first_name',
+        'label_alt_force' => 1,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'dividers2tabs' => true,
-        'default_sortby' => 'starttime DESC, uid DESC',
+        'default_sortby' => 'last_name DESC, first_name DESC',
         'delete' => 'deleted',
         'enablecolumns' => array(
-            'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
+            'disabled' => 'hidden'
         ),
-        'searchFields' => 'title,body_text,teaser_text',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Article.png',
+        'searchFields' => 'first_name,last_name,email,job,description',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Person.png',
     ),
     'interface' => array(
-        'showRecordFieldList' => 'hidden, title',
+        'showRecordFieldList' => 'hidden, first_name, last_name',
     ),
     'types' => array(
-        '1' => array('showitem' => 'hidden;;1, --palette--;;title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+        '1' => array('showitem' => 'hidden;;1, --palette--;;name, --palette--;;contact, --palette--;;social, description;;;richtext:rte_transform[mode=ts_links],images'),
     ),
     'palettes' => array(
-        'title' => array('showitem' => 'title'),
+        'name' => array('showitem' => 'first_name, last_name'),
+        'contact' => array('showitem' => 'email, wwww'),
+        'social' => array('showitem' => 'facebook, twitter, xing'),
     ),
     'columns' => array(
         'hidden' => array(
@@ -34,40 +36,27 @@ return array(
                 'type' => 'check',
             ),
         ),
-        'starttime' => array(
+        'first_name' => array(
             'exclude' => 0,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
-            'config' => array(
-                'type' => 'input',
-                'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
-                'default' => 0,
-            ),
-        ),
-        'endtime' => array(
-            'exclude' => 0,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-            'config' => array(
-                'type' => 'input',
-                'eval' => 'datetime',
-                'renderType' => 'inputDateTime',
-                'default' => 0,
-            ),
-        ),
-        'title' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_article.title',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.first_name',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ),
         ),
-        'body_text' => array(
+        'last_name' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_article.body_text',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.last_name',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ),
+        ),
+        'description' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_article.description',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -89,16 +78,6 @@ return array(
                         'type' => 'script'
                     )
                 )
-            ),
-        ),
-        'teaser_text' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_article.teaser_text',
-            'config' => array(
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 5,
-                'eval' => 'trim',
             ),
         ),
         'images' => array(
@@ -148,6 +127,60 @@ return array(
                     'size' => 10,
                 ),
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
+        ),
+        'www' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.www',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
+            ),
+        ),
+        'email' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.email',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
+            ),
+        ),
+        'job' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.job',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
+            ),
+        ),
+        'facebook' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.facebook',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
+            ),
+        ),
+        'twitter' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.twitter',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
+            ),
+        ),
+        'xing' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.xing',
+            'config' => array(
+                'type' => 'input',
+                'size' => 128,
+                'eval' => 'trim'
             ),
         ),
     ),

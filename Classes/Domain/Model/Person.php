@@ -23,39 +23,60 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Domain\Model\Blog;
+namespace Tollwerk\TwNueww\Domain\Model;
+
 
 use Tollwerk\TwNueww\Domain\Model\Traits\ImageTrait;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-class Article extends AbstractEntity
+class Person extends AbstractEntity
 {
     use ImageTrait;
 
     /**
      * @var string
      */
-    protected $title = '';
+    protected $firstName = '';
 
     /**
      * @var string
      */
-    protected $teaserText = '';
+    protected $lastName = '';
 
     /**
      * @var string
      */
-    protected $bodyText = '';
+    protected $email = '';
 
     /**
-     * @var int
+     * @var string
      */
-    protected $starttime = 0;
+    protected $job = '';
 
     /**
-     * @var int
+     * @var string
      */
-    protected $endtime = 0;
+    protected $www = '';
+
+    /**
+     * @var string
+     */
+    protected $twitter = '';
+
+    /**
+     * @var string
+     */
+    protected $facebook = '';
+
+    /**
+     * @var string
+     */
+    protected $xing = '';
+
+    /**
+     * @var string
+     */
+    protected $description = '';
 
     /**
      * @var int
@@ -70,82 +91,145 @@ class Article extends AbstractEntity
     /**
      * @return string
      */
-    public function getTitle()
+    public function getFirstName()
     {
-        return $this->title;
+        return $this->firstName;
     }
 
     /**
-     * @param string $title
+     * @param string $firstName
      */
-    public function setTitle($title)
+    public function setFirstName($firstName)
     {
-        $this->title = $title;
+        $this->firstName = $firstName;
     }
 
     /**
      * @return string
      */
-    public function getTeaserText()
+    public function getLastName()
     {
-        return $this->teaserText;
+        return $this->lastName;
     }
 
     /**
-     * @param string $teaserText
+     * @param string $lastName
      */
-    public function setTeaserText($teaserText)
+    public function setLastName($lastName)
     {
-        $this->teaserText = $teaserText;
+        $this->lastName = $lastName;
     }
-
 
     /**
      * @return string
      */
-    public function getBodyText()
+    public function getEmail()
     {
-        return $this->bodyText;
+        return $this->email;
     }
 
     /**
-     * @param string $bodyText
+     * @param string $email
      */
-    public function setBodyText($bodyText)
+    public function setEmail($email)
     {
-        $this->bodyText = $bodyText;
+        $this->email = $email;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getStarttime()
+    public function getJob()
     {
-        return $this->starttime;
+        return $this->job;
     }
 
     /**
-     * @param int $starttime
+     * @param string $job
      */
-    public function setStarttime($starttime)
+    public function setJob($job)
     {
-        $this->starttime = $starttime;
+        $this->job = $job;
     }
 
     /**
-     * @return int
+     * @return string
      */
-    public function getEndtime()
+    public function getWww()
     {
-        return $this->endtime;
+        return $this->www;
     }
 
     /**
-     * @param int $endtime
+     * @param string $www
      */
-    public function setEndtime($endtime)
+    public function setWww($www)
     {
-        $this->endtime = $endtime;
+        $this->www = $www;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param string $twitter
+     */
+    public function setTwitter($twitter)
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param string $facebook
+     */
+    public function setFacebook($facebook)
+    {
+        $this->facebook = $facebook;
+    }
+
+    /**
+     * @return string
+     */
+    public function getXing()
+    {
+        return $this->xing;
+    }
+
+    /**
+     * @param string $xing
+     */
+    public function setXing($xing)
+    {
+        $this->xing = $xing;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     /**
@@ -179,8 +263,6 @@ class Article extends AbstractEntity
     {
         $this->tstamp = $tstamp;
     }
-
-
 
 
 

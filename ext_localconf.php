@@ -19,3 +19,15 @@ if (!defined('TYPO3_MODE')) {
         'Blog\\Article' => '',
     ]
 );
+
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Tollwerk.'.$_EXTKEY,
+    'Person',
+    [
+        'Person' => 'list, show',
+    ],
+    [
+        'Person' => '',
+    ]
+);
