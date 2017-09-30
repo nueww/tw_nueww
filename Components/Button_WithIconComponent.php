@@ -48,11 +48,11 @@ class Button_WithIconComponent extends FluidTemplateComponent
     protected $status = self::STATUS_WIP;
 
     /**
-     * Variant
+     * Alternative label
      *
      * @var string
      */
-    protected $variant = 'Button with icon';
+    protected $label = 'With icon';
 
     /**
      * Configure the component

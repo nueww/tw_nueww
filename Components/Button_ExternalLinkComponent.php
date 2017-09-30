@@ -48,11 +48,11 @@ class Button_ExternalLinkComponent extends FluidTemplateComponent
     protected $status = self::STATUS_WIP;
 
     /**
-     * Variant
+     * Alternative label
      *
      * @var string
      */
-    protected $variant = 'Button external link';
+    protected $label = 'External link';
 
     /**
      * Configure the component
