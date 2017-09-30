@@ -18,14 +18,6 @@ plugin.tx_twnueww {
         }
     }
     settings {
-<<<<<<< HEAD
-        enable = {$plugin.tx_nueww.settings.enable}
-
-        blog {
-            storagePid = {$plugin.tx_nueww.settings.blog.storagePid}
-        }
-=======
         enable = {$plugin.tx_twnueww.settings.enable}
->>>>>>> master
     }
 }
