@@ -1,1 +1,24 @@
-<input type="button"/>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{href}">
+    <f:then>
+        <a class="nueww-button" {f:if(condition:
+        '{target}', then: ' target="{target}" rel="nofollow noopener"')}>
+    </f:then>
+    <f:else>
+        <button class="nueww-button" {f:if(condition:
+        '{type}', then: ' type="{type}"')}>
+    </f:else>
+</f:if>
+<f:if condition="{icon}">
+    <f:render partial="Icons/Star.svg"/>
+</f:if>
+{label}
+<f:if condition="{href}">
+    <f:then>
+        </a>
+    </f:then>
+    <f:else>
+        </button>
+    </f:else>
+</f:if>
+</html>

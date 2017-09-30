@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class ButtonComponent extends FluidTemplateComponent
+class Button_WithIconComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -46,6 +46,13 @@ class ButtonComponent extends FluidTemplateComponent
      * @var int
      */
     protected $status = self::STATUS_WIP;
+
+    /**
+     * Variant
+     *
+     * @var string
+     */
+    protected $variant = 'Button with icon';
 
     /**
      * Configure the component
@@ -61,7 +68,7 @@ class ButtonComponent extends FluidTemplateComponent
         $this->setParameter('label', 'mybutton');
         $this->setParameter('type', null);
         $this->setParameter('href', null);
-        $this->setParameter('icon', null);
+        $this->setParameter('icon', 'Star');
         $this->setParameter('target', null);
 
 //        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
