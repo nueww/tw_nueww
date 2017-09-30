@@ -22,6 +22,15 @@
 			<trans-unit id="common.enable" xml:space="preserve">
 				<source>Enable this extension</source>
 			</trans-unit>
+			<trans-unit id="tx_twnueww_domain_model_blog_article">
+				<source>Blog article</source>
+			</trans-unit>
+			<trans-unit id="tx_twnueww_domain_model_article.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_twnueww_domain_model_article.body_text">
+				<source>Body text</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

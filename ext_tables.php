@@ -9,3 +9,6 @@ if (!defined('TYPO3_MODE')) {
     'Configuration/TypoScript/Static',
     'Project: NUEWW 2018'
 );
+
+// Register classes
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_blog_article');

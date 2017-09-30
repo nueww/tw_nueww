@@ -1,0 +1,11 @@
+config.tx_extbase.persistence.classes {
+    Tollwerk\TwNueww\Domain\Model\Blog\Article.mapping {
+        tableName = tx_twnueww_domain_model_blog_article
+        columns {
+            starttime.mapOnProperty = starttime
+            endtime.mapOnProperty = endtime
+            tstamp.mapOnProperty = lastmod
+            crdate.mapOnProperty = crdate
+        }
+    }
+}

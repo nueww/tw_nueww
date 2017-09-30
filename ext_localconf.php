@@ -7,3 +7,4 @@ if (!defined('TYPO3_MODE')) {
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('Tollwerk.TwNueww', 'Page');
 \FluidTYPO3\Flux\Core::registerProviderExtensionKey('Tollwerk.TwNueww', 'Content');
 
+
