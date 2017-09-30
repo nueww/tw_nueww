@@ -12,24 +12,12 @@
         <flux:grid>
             <!-- Edit this grid to change the "backend layout" structure -->
             <flux:grid.row>
-                <flux:grid.column colPos="0" colspan="3" name="main"/>
-                <flux:grid.column colPos="1" name="right"/>
+                <flux:grid.column colPos="0" name="main"/>
             </flux:grid.row>
         </flux:grid>
     </f:section>
 
     <f:section name="Main">
-        <h1>I am a page template!</h1>
-        <p>
-            My template file is EXT:tw_nueww/Resources/Private/Page/Standard.html.
-        </p>
-        <div style="float: left; width: 75%;">
-            <h2>Content main</h2>
             <v:content.render column="0"/>
-        </div>
-        <div style="float: left; width: 25%;">
-            <h2>Content right</h2>
-            <v:content.render column="1"/>
-        </div>
     </f:section>
 </div>
