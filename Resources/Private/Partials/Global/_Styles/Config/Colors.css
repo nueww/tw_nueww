@@ -1,0 +1,10 @@
+:root {
+  --color-bg--page: #ffc107;
+
+  --color-text: #263238;
+  --color-text--light: #cfd8dc;
+  --color-text--medium: #607d8b;
+
+  --color-primary: #bf360c;
+  --color-secondary: #1976d2;
+}
