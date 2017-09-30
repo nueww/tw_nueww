@@ -4,6 +4,9 @@
           product-name="tw_nueww">
         <header/>
         <body>
+			<trans-unit id="list_type.blog">
+				<source>NUEWW Blog</source>
+			</trans-unit>
             <trans-unit id="file" xml:space="preserve">
 				<source>Files &amp; directories</source>
 			</trans-unit>
@@ -21,6 +24,12 @@
 			</trans-unit>
 			<trans-unit id="common.enable" xml:space="preserve">
 				<source>Enable this extension</source>
+			</trans-unit>
+			<trans-unit id="blog">
+				<source>Blog</source>
+			</trans-unit>
+			<trans-unit id="blog.storagePid">
+				<source>Storage pid</source>
 			</trans-unit>
 			<trans-unit id="tx_twnueww_domain_model_blog_article">
 				<source>Blog article</source>

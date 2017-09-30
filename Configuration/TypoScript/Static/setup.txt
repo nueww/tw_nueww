@@ -17,7 +17,16 @@ plugin.tx_twnueww {
             20 = {$plugin.tx_twnueww.view.layoutRootPath}
         }
     }
+
+    persistence {
+        storagePid = {$plugin.tx_nueww.settings.blog.storagePid}
+    }
+
     settings {
-        enable = {$plugin.tx_twnueww.settings.enable}
+        enable = {$plugin.tx_nueww.settings.enable}
+
+        blog {
+
+        }
     }
 }
