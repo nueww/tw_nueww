@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class ButtonComponent extends FluidTemplateComponent
+class Button_LinkComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -46,6 +46,13 @@ class ButtonComponent extends FluidTemplateComponent
      * @var int
      */
     protected $status = self::STATUS_WIP;
+
+    /**
+     * Variant
+     *
+     * @var string
+     */
+    protected $variant = 'Button link';
 
     /**
      * Configure the component
@@ -60,7 +67,7 @@ class ButtonComponent extends FluidTemplateComponent
 
         $this->setParameter('label', 'mybutton');
         $this->setParameter('type', null);
-        $this->setParameter('href', null);
+        $this->setParameter('href', '#void');
         $this->setParameter('icon', null);
         $this->setParameter('target', null);
 
