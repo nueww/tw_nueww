@@ -1,18 +1,18 @@
 # customsubcategory=common=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:common
 # customsubcategory=file=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file
 
-plugin.tx_nueww {
+plugin.tx_twnueww {
     view {
-        # cat=plugin.tx_nueww/file/a; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.templateRootPath
+        # cat=plugin.tx_twnueww/file/a; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.templateRootPath
         templateRootPath = EXT:tw_nueww/Resources/Private/Templates/
-        # cat=plugin.tx_nueww/file/b; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.partialRootPath
+        # cat=plugin.tx_twnueww/file/b; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.partialRootPath
         partialRootPath = EXT:tw_nueww/Resources/Private/Partials/
-        # cat=plugin.tx_nueww/file/c; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.layoutRootPath
+        # cat=plugin.tx_twnueww/file/c; type=string; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file.layoutRootPath
         layoutRootPath = EXT:tw_nueww/Resources/Private/Layouts/
     }
 
     settings {
-        # cat=plugin.tx_nueww/common/a; type=options[Off=0,On=1]; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:common.enable
+        # cat=plugin.tx_twnueww/common/a; type=options[Off=0,On=1]; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:common.enable
         enable = 0
     }
 }
