@@ -56,7 +56,7 @@ class InputSinglelineComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Button/Button.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputSingleline/Template.html');
 
         $this->setParameter('label', 'Vorname');
         $this->setParameter('labelHidden', false);
