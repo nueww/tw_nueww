@@ -1,5 +1,6 @@
 # customsubcategory=common=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:common
 # customsubcategory=file=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file
+# customsubcategory=blog=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:blog
 
 plugin.tx_nueww {
     view {
@@ -14,5 +15,10 @@ plugin.tx_nueww {
     settings {
         # cat=plugin.tx_nueww/common/a; type=options[Off=0,On=1]; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:common.enable
         enable = 0
+
+        blog {
+            # cat=plugin.tx_nueww/blog/100; type=int; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:blog.storagePid
+            storagePid = 0
+        }
     }
 }

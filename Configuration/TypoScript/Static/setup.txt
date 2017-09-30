@@ -19,5 +19,9 @@ plugin.tx_nueww {
     }
     settings {
         enable = {$plugin.tx_nueww.settings.enable}
+
+        blog {
+            storagePid = {$plugin.tx_nueww.settings.blog.storagePid}
+        }
     }
 }
