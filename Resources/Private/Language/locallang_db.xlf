@@ -4,9 +4,12 @@
           product-name="tw_nueww">
         <header/>
         <body>
-			<trans-unit id="list_type.blog">
-				<source>NUEWW Blog</source>
-			</trans-unit>
+            <trans-unit id="list_type.blog">
+                <source>NUEWW Blog</source>
+            </trans-unit>
+            <trans-unit id="list_type.person">
+                <source>NUEWW Person</source>
+            </trans-unit>
             <trans-unit id="file" xml:space="preserve">
 				<source>Files &amp; directories</source>
 			</trans-unit>
@@ -25,27 +28,66 @@
 			<trans-unit id="common.enable" xml:space="preserve">
 				<source>Enable this extension</source>
 			</trans-unit>
-			<trans-unit id="blog">
-				<source>Blog</source>
-			</trans-unit>
-			<trans-unit id="blog.storagePid">
-				<source>Storage pid</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article">
-				<source>Blog article</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article.teaser_text">
-				<source>Teaser text</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article.body_text">
-				<source>Body text</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article.images">
-				<source>Images</source>
-			</trans-unit>
+            <trans-unit id="blog">
+                <source>Blog</source>
+            </trans-unit>
+            <trans-unit id="storagePid">
+                <source>Storage pid</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article">
+                <source>Blog article</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.teaser_text">
+                <source>Teaser text</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.body_text">
+                <source>Body text</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.images">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.images">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.first_name">
+                <source>First name</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.last_name">
+                <source>Last name</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.www">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.job">
+                <source>job</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.description">
+                <source>description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.twitter">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.xing">
+                <source>Xing</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

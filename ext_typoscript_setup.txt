@@ -8,4 +8,10 @@ config.tx_extbase.persistence.classes {
             crdate.mapOnProperty = crdate
         }
     }
+    Tollwerk\TwNueww\Domain\Model\Person.mapping {
+        columns {
+            tstamp.mapOnProperty = tstamp
+            crdate.mapOnProperty = crdate
+        }
+    }
 }
