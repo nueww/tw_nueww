@@ -62,7 +62,7 @@ class InputMultilineComponent extends FluidTemplateComponent
         $this->setParameter('labelHidden', false);
         $this->setParameter('name', 'message');
         $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz...');
+        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz…');
         $this->setParameter('required', false);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
