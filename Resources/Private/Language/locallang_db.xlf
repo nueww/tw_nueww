@@ -4,6 +4,9 @@
           product-name="tw_nueww">
         <header/>
         <body>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
             <trans-unit id="list_type.blog">
                 <source>NUEWW Blog</source>
             </trans-unit>
@@ -43,6 +46,30 @@
             <trans-unit id="tabs.nested_content">
                 <source>Nested content</source>
             </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring">
+                <source>Sponsoring</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.series">
+                <source>Blog series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.1">
+                <source>Type #1</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.2">
+                <source>Type #2</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.3">
+                <source>Type #3</source>
+            </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article">
                 <source>Blog article</source>
             </trans-unit>
@@ -59,7 +86,7 @@
                 <source>Images</source>
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article.series">
-                <source>Series</source>
+                <source>Blog Series</source>
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_series">
                 <source>Blog series</source>
