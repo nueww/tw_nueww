@@ -26,7 +26,7 @@ actual starting level from outside.
 
 ```html
 <!-- Will result in <h1> -->
-<n:h1 star="1">Foo</n:h1>
+<n:h1 start="1">Foo</n:h1>
 
 <!-- Will result in <h2> -->
 <n:h1 start="2">Foo</n:h1>
