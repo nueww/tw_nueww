@@ -10,4 +10,4 @@ check_run() {
 
 # Example usage
 # In this example it's used to run `npm install` if package.json changed
-check_run "Resources/Private/Database/nueww_01.sql" "mysql --password=nueww nueww_01 < Resources/Private/Database/nueww_01.sql"
+check_run "Resources/Private/Database/nueww_01.sql" "mysql -uroot --password=nueww nueww_01 < Resources/Private/Database/nueww_01.sql"
