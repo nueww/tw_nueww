@@ -103,6 +103,6 @@ class ColorsComponent extends FluidTemplateComponent
 
         $this->setParameter('colorGroups', array_filter($colorGroups));
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Global/Styleguide.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Global/_Styleguide.min.css');
     }
 }
