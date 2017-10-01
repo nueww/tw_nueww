@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputDropdownComponent extends FluidTemplateComponent
+class FormComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,27 +56,7 @@ class InputDropdownComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputDropdown/Template.html');
-
-        $this->setParameter('label', 'Zahlungsart');
-        $this->setParameter('labelHidden', false);
-        $this->setParameter('name', 'paymentMethod');
-        $this->setParameter('options', [
-            [
-                'value' => 'paypal',
-                'label' => 'PayPal'
-            ],
-            [
-                'value' => 'creditcard',
-                'label' => 'Kreditkarte'
-            ]
-        ]);
-        $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Bitte wählen Sie eine Zahlungsart');
-        $this->setParameter('autocomplete', false);
-        $this->setParameter('required', false);
-        $this->setParameter('disabled', false);
-        $this->setParameter('readonly', false);
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Form/Template.html');
 
 //        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
 //        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
