@@ -1,10 +1,31 @@
 :root {
   --color-bg--page: #ffc107;
+  --color-bg--card: #fff;
+  --color-bg--placeholder: #ccc;
+  --color-bg--tag: #ccc;
 
   --color-text: #263238;
   --color-text--light: #cfd8dc;
   --color-text--medium: #607d8b;
+  --color-text--hover: #607d8b;
 
-  --color-primary: #bf360c;
-  --color-secondary: #1976d2;
+  --color-button-default: #ccc;
+  --color-button-default--border: #ccc;
+  --color-button-default--hover: #ccc;
+
+  --color-button-primary: #ccc;
+  --color-button-primary--border: #ccc;
+  --color-button-primary--hover: #ccc;
+
+  --color-input--text: #444;
+  --color-input--placeholder: #444;
+  --color-input--bg: #444;
+  --color-input--border: #444;
+  --color-input--hover: #444;
+  --color-input--error: #444;
+  --color-input--filled: #444;
+
+  --color-status--danger: #d00;
+  --color-status--warning: #d00;
+  --color-status--success: #d00;
 }
