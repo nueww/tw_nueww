@@ -32,10 +32,11 @@ nueww-input-option-group--input">
   {f:if(condition: '{readonly}', then: ' readonly')}
   >
   <label for="nueww-input-option-{uuid}"
-         class="nueww-input-option__label{f:if(condition: '{labelHidden}', then: ' nueww-input-option__label--is-hidden')}">{label}
+         class="nueww-input-option__label{f:if(condition: '{labelHidden}', then: ' nueww-input-option__label--is-hidden')}">
+    <f:format.raw>{label}</f:format.raw>
     <f:if condition="{required}">
       <abbr class="nueww-input-option__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
     </f:if>
-    :</label>
+    </label>
 </div>
 </html>

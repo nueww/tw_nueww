@@ -58,12 +58,13 @@ class InputSinglelineComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputSingleline/Template.html');
 
-        $this->setParameter('label', 'Herr');
+        $this->setParameter('label', 'Vorname');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('type', 'radio');
-        $this->setParameter('name', 'salutation');
-        $this->setParameter('value', 'Herr');
-        $this->setParameter('checked', false);
+        $this->setParameter('type', 'text');
+        $this->setParameter('name', 'firstname');
+        $this->setParameter('value', '');
+        $this->setParameter('placeholder', 'Max');
+        $this->setParameter('autocomplete', 'firstname');
         $this->setParameter('required', false);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);

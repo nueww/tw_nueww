@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputOptionComponent extends FluidTemplateComponent
+class InputOption_CheckboxComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -58,13 +58,13 @@ class InputOptionComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputOption/Template.html');
 
-        $this->setParameter('label', 'Herr');
+        $this->setParameter('label', 'Ich akzeptiere die <a href="#void">AGB</a>');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('type', 'radio');
-        $this->setParameter('name', 'salutation');
-        $this->setParameter('value', 'Herr');
+        $this->setParameter('type', 'checkbox');
+        $this->setParameter('name', 'terms');
+        $this->setParameter('value', 'akzeptiert');
         $this->setParameter('checked', false);
-        $this->setParameter('required', false);
+        $this->setParameter('required', true);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 

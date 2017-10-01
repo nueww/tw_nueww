@@ -23,7 +23,8 @@
 nueww-input-singleline-group
 nueww-input-singleline-group--input">
   <label for="nueww-input-singleline-{uuid}"
-         class="nueww-input-singleline__label{f:if(condition: '{labelHidden}', then: ' nueww-input-singleline__label--is-hidden')}">{label}
+         class="nueww-input-singleline__label{f:if(condition: '{labelHidden}', then: ' nueww-input-singleline__label--is-hidden')}">
+    <f:format.raw>{label}</f:format.raw>
     <f:if condition="{required}">
       <abbr class="nueww-input-singleline__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
     </f:if>
