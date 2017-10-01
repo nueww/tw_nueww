@@ -21,7 +21,11 @@ return array(
         'showRecordFieldList' => 'hidden, title',
     ),
     'types' => array(
-        '1' => array('showitem' => 'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop'),
+        '1' => array('showitem' =>
+            'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,
+             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, series,
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop'
+        ),
     ),
     'palettes' => array(
         'title' => array('showitem' => 'title'),
@@ -115,6 +119,20 @@ return array(
                 ],
 
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
+        ),
+        'series' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.series',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_twnueww_domain_model_blog_series',
+                'MM' => 'tx_twnueww_blog_article_series_mm',
+                'size' => 3,
+                'autoSizeMax' => 10,
+                'maxitems' => 9999,
+                'multiple' => 0,
             ),
         ),
     ),

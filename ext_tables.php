@@ -12,6 +12,7 @@ if (!defined('TYPO3_MODE')) {
 
 // Register classes
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_blog_article');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_blog_series');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_person');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_organization_organization');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_organization_sector');
