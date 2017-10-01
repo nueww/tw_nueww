@@ -3,7 +3,7 @@
 /***********************************************************************************
  *  The MIT License (MIT)
  *
- *  Copyright © 30.09.2017 Klaus Fielder <klaus@tollwerk.de> / @kftw
+ *  Copyright © 01.10.2017 Klaus Fielder <klaus@tollwerk.de> / @kftw
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of
  *  this software and associated documentation files (the "Software"), to deal in
@@ -23,25 +23,17 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Domain\Model;
+namespace Tollwerk\TwNueww\Domain\Model\Organization;
 
 
-use Tollwerk\TwNueww\Domain\Model\Traits\ImageTrait;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-class Person extends AbstractEntity
+class Organization extends AbstractEntity
 {
-    use ImageTrait;
-
     /**
      * @var string
      */
-    protected $firstName = '';
-
-    /**
-     * @var string
-     */
-    protected $lastName = '';
+    protected $title = '';
 
     /**
      * @var string
@@ -66,11 +58,6 @@ class Person extends AbstractEntity
     /**
      * @var string
      */
-    protected $job = '';
-
-    /**
-     * @var string
-     */
     protected $www = '';
 
     /**
@@ -91,7 +78,7 @@ class Person extends AbstractEntity
     /**
      * @var string
      */
-    protected $linkedIn = '';
+    protected $linkedin = '';
 
     /**
      * @var string
@@ -99,45 +86,19 @@ class Person extends AbstractEntity
     protected $instagram = '';
 
     /**
-     * @var int
-     */
-    protected $crdate = 0;
-
-    /**
-     * @var int
-     */
-    protected $tstamp = 0;
-
-    /**
      * @return string
      */
-    public function getFirstName()
+    public function getTitle()
     {
-        return $this->firstName;
+        return $this->title;
     }
 
     /**
-     * @param string $firstName
+     * @param string $title
      */
-    public function setFirstName($firstName)
+    public function setTitle($title)
     {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * @param string $lastName
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
+        $this->title = $title;
     }
 
     /**
@@ -159,17 +120,49 @@ class Person extends AbstractEntity
     /**
      * @return string
      */
-    public function getJob()
+    public function getPhone()
     {
-        return $this->job;
+        return $this->phone;
     }
 
     /**
-     * @param string $job
+     * @param string $phone
      */
-    public function setJob($job)
+    public function setPhone($phone)
     {
-        $this->job = $job;
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string $address
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     /**
@@ -239,97 +232,17 @@ class Person extends AbstractEntity
     /**
      * @return string
      */
-    public function getDescription()
+    public function getLinkedin()
     {
-        return $this->description;
+        return $this->linkedin;
     }
 
     /**
-     * @param string $description
+     * @param string $linkedin
      */
-    public function setDescription($description)
+    public function setLinkedin($linkedin)
     {
-        $this->description = $description;
-    }
-
-    /**
-     * @return int
-     */
-    public function getCrdate()
-    {
-        return $this->crdate;
-    }
-
-    /**
-     * @param int $crdate
-     */
-    public function setCrdate($crdate)
-    {
-        $this->crdate = $crdate;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTstamp()
-    {
-        return $this->tstamp;
-    }
-
-    /**
-     * @param int $tstamp
-     */
-    public function setTstamp($tstamp)
-    {
-        $this->tstamp = $tstamp;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * @param string $phone
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * @param string $address
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLinkedIn()
-    {
-        return $this->linkedIn;
-    }
-
-    /**
-     * @param string $linkedIn
-     */
-    public function setLinkedIn($linkedIn)
-    {
-        $this->linkedIn = $linkedIn;
+        $this->linkedin = $linkedin;
     }
 
     /**
@@ -347,7 +260,6 @@ class Person extends AbstractEntity
     {
         $this->instagram = $instagram;
     }
-
 
 
 }

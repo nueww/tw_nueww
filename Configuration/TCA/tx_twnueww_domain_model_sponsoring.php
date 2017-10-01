@@ -1,7 +1,7 @@
 <?php
 return array(
     'ctrl' => array(
-        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article',
+        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -14,23 +14,20 @@ return array(
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ),
-        'searchFields' => 'title,body_text,teaser_text',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Article.png',
+        'searchFields' => 'title,description',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Extension.png',
     ),
     'interface' => array(
         'showRecordFieldList' => 'hidden, title',
     ),
     'types' => array(
         '1' => array('showitem' =>
-            'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,
-             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, series,
+            'title, type, description,
+            --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, series,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop'
         ),
     ),
-    'palettes' => array(
-        'title' => array('showitem' => 'title'),
-        'startstop' => array('showitem' => 'starttime, endtime')
-    ),
+    'palettes' => array(),
     'columns' => array(
         'hidden' => array(
             'exclude' => 0,
@@ -63,16 +60,29 @@ return array(
         ),
         'title' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.title',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.title',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ),
         ),
-        'body_text' => array(
+        'type' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.body_text',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.type',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.type.1', 1],
+                    ['LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.type.2', 2],
+                    ['LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.type.3', 3]
+                ]
+            ),
+        ),
+        'description' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_sponsoring.description',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -96,31 +106,6 @@ return array(
                 )
             ),
         ),
-        'teaser_text' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.teaser_text',
-            'config' => array(
-                'type' => 'text',
-                'cols' => 40,
-                'rows' => 5,
-                'eval' => 'trim',
-            ),
-        ),
-        'images' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_fischer/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.images',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'images',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference',
-                        'headerThumbnail' => true
-                    ]
-                ],
-
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
-        ),
         'series' => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.series',
@@ -128,7 +113,7 @@ return array(
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
                 'foreign_table' => 'tx_twnueww_domain_model_blog_series',
-                'MM' => 'tx_twnueww_blog_article_series_mm',
+                'MM' => 'tx_twnueww_sponsoring_series_mm',
                 'size' => 3,
                 'autoSizeMax' => 10,
                 'maxitems' => 9999,
