@@ -1,0 +1,100 @@
+@import "../_Styles/Config/Breakpoints.css";
+@import "../_Styles/Config/Colors.css";
+@import "../_Styles/Config/Dimensions.css";
+@import "../_Styles/Config/Fonts.css";
+
+.color-bg--page {
+    background-color: var(--color-bg--page);
+}
+
+.color-bg--card {
+    background-color: var(--color-bg--card);
+}
+
+.color-bg--placeholder {
+    background-color: var(--color-bg--placeholder);
+}
+
+.color-bg--tag {
+    background-color: var(--color-bg--tag);
+}
+
+.color-text {
+    background-color: var(--color-text);
+}
+
+.color-text--light {
+    background-color: var(--color-text--light);
+}
+
+.color-text--medium {
+    background-color: var(--color-text--medium);
+}
+
+.color-text--hover {
+    background-color: var(--color-text--hover);
+}
+
+.color-button-default {
+    background-color: var(--color-button-default);
+}
+
+.color-button-default--border {
+    background-color: var(--color-button-default--border);
+}
+
+.color-button-default--hover {
+    background-color: var(--color-button-default--hover);
+}
+
+.color-button-primary {
+    background-color: var(--color-button-primary);
+}
+
+.color-button-primary--border {
+    background-color: var(--color-button-primary--border);
+}
+
+.color-button-primary--hover {
+    background-color: var(--color-button-primary--hover);
+}
+
+.color-input--text {
+    background-color: var(--color-input--text);
+}
+
+.color-input--placeholder {
+    background-color: var(--color-input--placeholder);
+}
+
+.color-input--bg {
+    background-color: var(--color-input--bg);
+}
+
+.color-input--border {
+    background-color: var(--color-input--border);
+}
+
+.color-input--hover {
+    background-color: var(--color-input--hover);
+}
+
+.color-input--error {
+    background-color: var(--color-input--error);
+}
+
+.color-input--filled {
+    background-color: var(--color-input--filled);
+}
+
+.color-status--danger {
+    background-color: var(--color-status--danger);
+}
+
+.color-status--warning {
+    background-color: var(--color-status--warning);
+}
+
+.color-status--success {
+    background-color: var(--color-status--success);
+}
