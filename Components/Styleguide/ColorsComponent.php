@@ -36,7 +36,13 @@
 
 namespace Tollwerk\TwNueww\Component\Styleguide;
 
+use Sabberworm\CSS\Comment\Comment;
+use Sabberworm\CSS\Parser;
+use Sabberworm\CSS\Rule\Rule;
+use Sabberworm\CSS\RuleSet\DeclarationBlock;
+use Sabberworm\CSS\Value\Color;
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Colors
@@ -61,8 +67,42 @@ class ColorsComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Global/Styleguide/Colors.html');
 
-        $colors = [
+        $colorGroups = ['_' => []];
+        $colorGroup = '_';
 
-        ];
+        $colorCSSFile = GeneralUtility::getFileAbsFileName(
+            'EXT:tw_nueww/Resources/Private/Partials/Global/_Styles/Config/Colors.css'
+        );
+        $cssParser = new Parser(file_get_contents($colorCSSFile));
+        $cssDocument = $cssParser->parse();
+
+        // Run through all declaration blocks
+        /** @var DeclarationBlock $declarationBlock */
+        foreach ($cssDocument->getAllDeclarationBlocks() as $declarationBlock) {
+            // Run through all rules
+            /** @var Rule $rule */
+            foreach ($declarationBlock->getRules() as $rule) {
+                // Check if a new color group should be started
+                $comments = $rule->getComments();
+                if (count($comments)) {
+                    /** @var Comment $comment */
+                    $comment = array_shift($comments);
+                    $colorGroup = trim($comment->getComment());
+                    $colorGroups[$colorGroup] = [];
+                }
+
+                $color = $rule->getValue();
+                if ($color instanceof Color) {
+                    $colorGroups[$colorGroup][$rule->getRule()] = [
+                        'hex' => strval($color),
+                        'rgb' => array_map('strval', $color->getColor()),
+                    ];
+                }
+            }
+        }
+
+        $this->setParameter('colorGroups', array_filter($colorGroups));
+
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Global/Styleguide.min.css');
     }
 }
