@@ -1,0 +1,31 @@
+.park-select {
+  @extend %input-groups;
+
+  &__label {
+    @extend %labels;
+  }
+
+  &__label--is-hidden {
+    @extend %labels--hidden;
+  }
+
+  &__select {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='12' fill='%23666'%3E%3Cpolygon points='0,0 10,0 5,12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px);
+    border: 1px solid #bbb;
+    font-size: rem(16);
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
