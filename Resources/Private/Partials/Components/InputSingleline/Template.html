@@ -1,0 +1,43 @@
+<f:comment><!--
+
+    @param string label         Label value
+    @param boolean labelHidden  Should the label be hidden?
+    @param string type          Input type, if not text
+    @param string name          Input name
+    @param string value         Input value, if already set
+    @param string placeholder   Placeholder text, if needed
+    @param string autocomplete  Browser autocomplete hint
+    @param boolean required     required
+    @param boolean disabled     required
+    @param boolean readonly     required
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+{v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
+'uuid')}
+<div class="nueww-input
+  {f:if(condition: '{name}', then: 'nueww-input--{name}')}
+  {f:if(condition: '{type}', then: 'nueww-input--{type}', else: 'nueww-input--text')}
+  {f:if(condition: '{required}', then: 'nueww-input--required')}
+  {f:if(condition: '{labelHidden}', then: 'nueww-input--label-is-hidden')}
+nueww-input-group
+nueww-input-group--input">
+  <label for="nueww-input-{uuid}"
+         class="nueww-input__label{f:if(condition: '{labelHidden}', then: ' nueww-input__label--is-hidden')}">{label}
+    <f:if condition="{required}">
+      <abbr class="nueww-input__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
+    </f:if>
+    :</label>
+  <input id="nueww-input-{uuid}"
+         class="nueww-input__input"
+         {f:if(condition: '{name}', then: ' name="{name}"')}
+  {f:if(condition: '{type}', then: ' type="{type}"')}
+  {f:if(condition: '{value}', then: ' value="{value}"')}
+  {f:if(condition: '{placeholder}', then: ' placeholder="{placeholder}"')}
+  {f:if(condition: '{autocomplete}', then: ' autocomplete="{autocomplete}"')}
+  {f:if(condition: '{required}', then: ' required')}
+  {f:if(condition: '{disabled}', then: ' disabled')}
+  {f:if(condition: '{readonly}', then: ' readonly')}
+  >
+</div>
+</html>
