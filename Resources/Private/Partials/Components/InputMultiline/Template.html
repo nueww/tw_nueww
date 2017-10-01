@@ -13,7 +13,7 @@
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 {v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
 'uuid')}
-<textarea class="nueww-input-multiline
+<div class="nueww-input-multiline
   {f:if(condition: '{name}', then: 'nueww-input-multiline--{name}')}
   {f:if(condition: '{required}', then: 'nueww-input-multiline--required')}
   {f:if(condition: '{labelHidden}', then: 'nueww-input-multiline--label-is-hidden')}

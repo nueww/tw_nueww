@@ -4,6 +4,7 @@
     @param boolean labelHidden  Should the label be hidden?
     @param string type          Input type, if not text
     @param string name          Input name
+    @param object options       Dropdown options as {value: 'label'} pairs
     @param string value         Input value, if already set
     @param string placeholder   Placeholder text, if needed
     @param string autocomplete  Browser autocomplete hint
@@ -15,7 +16,7 @@
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 {v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
 'uuid')}
-<select class="nueww-input-dropdown
+<div class="nueww-input-dropdown
   {f:if(condition: '{name}', then: 'nueww-input-dropdown--{name}')}
   {f:if(condition: '{required}', then: 'nueww-input-dropdown--required')}
   {f:if(condition: '{labelHidden}', then: 'nueww-input-dropdown--label-is-hidden')}
@@ -38,8 +39,10 @@ nueww-input-dropdown-group--input">
   {f:if(condition: '{disabled}', then: ' disabled')}
   {f:if(condition: '{readonly}', then: ' readonly')}
   >
-  <option value="">--- Bitte wählen ---</option>
-  <f:for each=""></f:for>
+  <option value="">---  {f:if(condition: '{placeholder}', then: '{placeholder}', else: 'Bitte wählen')} ---</option>
+  <f:for each="{options}" as="optionLabel" key="optionValue">
+    <option value="{optionValue}">{optionLabel}</option>
+  </f:for>
 </select>
 </div>
 </html>
