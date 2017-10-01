@@ -361,7 +361,7 @@ CREATE TABLE `pages` (
 
 LOCK TABLES `pages` WRITE;
 /*!40000 ALTER TABLE `pages` DISABLE KEYS */;
-INSERT INTO `pages` VALUES (1,0,0,0,0,'',0,0,0,0,0,0,1506859878,256,0,2,0,31,27,0,0,1506529494,2,0,'Start für David',1,'<INCLUDE_TYPOSCRIPT: source=\"FILE:EXT:tw_nueww/Configuration/TypoScript/Main/TSconfig/page.t3s\">',1,0,'',0,0,1,0,0,0,'','',0,'',0,0,NULL,0,'',0,NULL,0,1506807480,NULL,'',0,'','','',0,0,0,0,'',0,0,'fluidpages__fluidpages','fluidpages__fluidpages',NULL,0,0,NULL,NULL,NULL,NULL,'Tollwerk.TwNueww->standard','Tollwerk.TwNueww->standard',0),(2,1,0,0,0,'',0,0,0,0,0,0,1506778635,256,0,3,0,31,27,0,0,1506778621,3,0,'Blog',254,NULL,0,0,'',0,0,1,0,0,0,'0','',0,'',0,0,NULL,0,'',0,NULL,0,0,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0,0,NULL,NULL,NULL,NULL,'','',0),(3,1,0,0,0,'',0,0,0,0,0,0,1506806638,128,0,3,0,31,27,0,0,1506806628,3,0,'Personen',254,NULL,0,0,'',0,0,1,0,0,0,'0','',0,'',0,0,NULL,0,'',0,NULL,0,0,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0,0,NULL,NULL,NULL,NULL,'','',0);
+INSERT INTO `pages` VALUES (1,0,0,0,0,'',0,0,0,0,0,0,1506860027,256,0,2,0,31,27,0,0,1506529494,2,0,'Start (für David)',1,'<INCLUDE_TYPOSCRIPT: source=\"FILE:EXT:tw_nueww/Configuration/TypoScript/Main/TSconfig/page.t3s\">',1,0,'',0,0,1,0,0,0,'','',0,'',0,0,NULL,0,'',0,NULL,0,1506807480,NULL,'',0,'','','',0,0,0,0,'',0,0,'fluidpages__fluidpages','fluidpages__fluidpages',NULL,0,0,NULL,NULL,NULL,NULL,'Tollwerk.TwNueww->standard','Tollwerk.TwNueww->standard',0),(2,1,0,0,0,'',0,0,0,0,0,0,1506778635,256,0,3,0,31,27,0,0,1506778621,3,0,'Blog',254,NULL,0,0,'',0,0,1,0,0,0,'0','',0,'',0,0,NULL,0,'',0,NULL,0,0,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0,0,NULL,NULL,NULL,NULL,'','',0),(3,1,0,0,0,'',0,0,0,0,0,0,1506806638,128,0,3,0,31,27,0,0,1506806628,3,0,'Personen',254,NULL,0,0,'',0,0,1,0,0,0,'0','',0,'',0,0,NULL,0,'',0,NULL,0,0,NULL,'',0,'','','',0,0,0,0,'',0,0,'','',NULL,0,0,NULL,NULL,NULL,NULL,'','',0);
 /*!40000 ALTER TABLE `pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1463,4 +1463,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-01 12:11:26
+-- Dump completed on 2017-10-01 12:14:12
