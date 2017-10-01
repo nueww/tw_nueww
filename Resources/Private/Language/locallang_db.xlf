@@ -34,6 +34,15 @@
             <trans-unit id="storagePid">
                 <source>Storage pid</source>
             </trans-unit>
+            <trans-unit id="tabs.social">
+                <source>Social</source>
+            </trans-unit>
+            <trans-unit id="tabs.references">
+                <source>References</source>
+            </trans-unit>
+            <trans-unit id="tabs.nested_content">
+                <source>Nested content</source>
+            </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article">
                 <source>Blog article</source>
             </trans-unit>
@@ -49,8 +58,17 @@
             <trans-unit id="tx_twnueww_domain_model_blog_article.images">
                 <source>Images</source>
             </trans-unit>
-            <trans-unit id="tx_twnueww_domain_model_blog_article.images">
-                <source>Images</source>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.series">
+                <source>Series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series">
+                <source>Blog series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series.articles">
+                <source>Articles</source>
             </trans-unit>
             <trans-unit id="person">
                 <source>Person</source>
