@@ -1,0 +1,26 @@
+<f:comment><!--
+
+    @param string method        GET or POST (default)
+    @param string action        URL to send the form to
+    @param string target        Target window to submit the form to
+    @param boolean autocomplete Activates the browser's autocomplete feature
+    @param boolean novalidate   Deactivates HTML5 form validation
+    @param boolean vertical     Activated a vertical layout variant
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+<form method="{f:if(condition: '{method}', then: '{method}', else: 'POST')}"
+      action="{action}"
+      class="nueww-form{f:if(condition: '{vertical}', then: ' nueww-form--vertical')}"
+      {f:if(condition:
+'{target}', then: ' target="{target}"')}
+'{autocomplete}', then: ' autocomplete="on"')}
+{f:if(condition: '{novalidate}', then: ' novalidate')}>
+<f:if condition="{inputs}">
+  <f:for each="{inputs}" as="input">
+    <f:render partial="Components/{input.component}/Template.html" arguments="{input.arguments}"/>
+  </f:for>
+</f:if>
+<f:render partial="Components/Button/Template" arguments="{type: 'submit', label: 'Absenden'}"/>
+</form>
+</html>
