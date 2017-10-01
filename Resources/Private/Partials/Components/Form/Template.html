@@ -12,9 +12,8 @@
 <form method="{f:if(condition: '{method}', then: '{method}', else: 'POST')}"
       action="{action}"
       class="nueww-form{f:if(condition: '{vertical}', then: ' nueww-form--vertical')}"
-      {f:if(condition:
-'{target}', then: ' target="{target}"')}
-'{autocomplete}', then: ' autocomplete="on"')}
+      {f:if(condition: '{target}', then: ' target="{target}"')}
+{f:if(condition: '{autocomplete}', then: ' autocomplete="on"')}
 {f:if(condition: '{novalidate}', then: ' novalidate')}>
 <f:if condition="{inputs}">
   <f:for each="{inputs}" as="input">
