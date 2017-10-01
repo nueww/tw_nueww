@@ -1,0 +1,44 @@
+.nueww-input-option {
+  display: block;
+  font-size: 0;
+
+  @media (--breakpoint--large) {
+    display: grid;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    grid-template-columns: max-content auto;
+  }
+
+  &__label {
+    display: block;
+    width: auto;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    cursor: pointer;
+  }
+
+  &__label--is-hidden {
+    @extend %labels--hidden;
+  }
+
+  &__input {
+    display: block;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    min-width: 0;
+    cursor: pointer;
+  }
+
+  &__label,
+  &__input {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__required {
+    vertical-align: top;
+  }
+}

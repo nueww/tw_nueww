@@ -1,0 +1,70 @@
+{
+  "action": "#void",
+  "method": "post",
+  "submit": "Absenden",
+  "inputs": [
+    {
+      "component": "InputDropdown",
+      "arguments": {
+        "name": "salutation",
+        "label": "Anrede",
+        "placeholder": "Bitte wählen Sie eine Anrede",
+        "options": [
+          {
+            "value": "Mrs.",
+            "label": "Frau"
+          },
+          {
+            "value": "Mr.",
+            "label": "Herr"
+          },
+          {
+            "value": "Majesty",
+            "label": "Ihre Durchlaucht"
+          }
+        ]
+      }
+    },
+    {
+      "component": "InputSingleline",
+      "arguments": {
+        "name": "firstname",
+        "label": "Vorname",
+        "required": true
+      }
+    },
+    {
+      "component": "InputSingleline",
+      "arguments": {
+        "name": "familyname",
+        "label": "Nachname",
+        "required": true
+      }
+    },
+    {
+      "component": "InputSingleline",
+      "arguments": {
+        "type": "email",
+        "name": "email",
+        "label": "E-Mail",
+        "required": true
+      }
+    },
+    {
+      "component": "InputMultiline",
+      "arguments": {
+        "name": "message",
+        "label": "Nachricht",
+        "required": true
+      }
+    },
+    {
+      "component": "InputOption",
+      "arguments": {
+        "type": "checkbox",
+        "name": "notify_me",
+        "label": "Mich über weitere Kommentare per E-Mail benachrichtigen"
+      }
+    }
+  ]
+}

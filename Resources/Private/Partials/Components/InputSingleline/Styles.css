@@ -1,0 +1,25 @@
+.nueww-input-singleline {
+  @extend %input-groups;
+
+  &__label {
+    @extend %labels;
+  }
+
+  &__label--is-hidden {
+    @extend %labels--hidden;
+  }
+
+  &__input {
+    @extend %inputs;
+  }
+
+  &__label,
+  &__input {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &__required {
+    vertical-align: top;
+  }
+}
