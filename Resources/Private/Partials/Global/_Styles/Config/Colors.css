@@ -1,30 +1,45 @@
 :root {
-  --color-bg--page: #ffc107;
+  /* Background colors */
+  --color-bg--page: #ffe600;
   --color-bg--card: #fff;
-  --color-bg--placeholder: #ccc;
-  --color-bg--tag: #ccc;
+  --color-bg--placeholder: #ebebeb;
+  --color-bg--tag: #ebebeb;
+  --color-bg--selection: color(#db0000 lightness(20%));
 
-  --color-text: #263238;
-  --color-text--light: #cfd8dc;
-  --color-text--medium: #607d8b;
-  --color-text--hover: #607d8b;
+  /* Text colors */
+  --color-text: #3c3c3c;
+  --color-text--light: #8a8a8a;
+  --color-text--medium: #626262;
+  --color-text--hover: #db0000;
 
-  --color-button-default: #ccc;
-  --color-button-default--border: #ccc;
-  --color-button-default--hover: #ccc;
+  /* Button colors (Default) */
+  --color-button-default: #fff;
+  --color-button-default--border: #db0000;
+  --color-button-default--hover: #db0000;
+  --color-button-default--text: #8a8a8a;
 
-  --color-button-primary: #ccc;
-  --color-button-primary--border: #ccc;
-  --color-button-primary--hover: #ccc;
+  /* Button colors (Primary) */
+  --color-button-primary: #db0000;
+  --color-button-primary--border: #db0000;
+  --color-button-primary--hover: #f7cccc;
+  --color-button-primary--text: #fff;
 
-  --color-input--text: #444;
-  --color-input--placeholder: #444;
-  --color-input--bg: #444;
-  --color-input--border: #444;
-  --color-input--hover: #444;
-  --color-input--error: #444;
-  --color-input--filled: #444;
+  /* Button colors (Simple) */
+  --color-button-primary: #fff;
+  --color-button-primary--border: #fff;
+  --color-button-primary--hover: #db0000;
+  --color-button-primary--text: #8a8a8a;
 
+  /* Input colors */
+  --color-input--text: #3c3c3c;
+  --color-input--placeholder: #b1b1b1;
+  --color-input--bg: #fff;
+  --color-input--border: #d8d8d8;
+  --color-input--hover: #db0000;
+  --color-input--error: #ff0066;
+  --color-input--filled: #fffce5;
+
+  /* Status colors */
   --color-status--danger: #d00;
   --color-status--warning: #d00;
   --color-status--success: #d00;
