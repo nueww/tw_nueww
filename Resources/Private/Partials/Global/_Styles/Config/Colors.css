@@ -11,6 +11,7 @@
   --color-text--light: #8a8a8a;
   --color-text--medium: #626262;
   --color-text--hover: #db0000;
+  --color-text--inverse: #fff;
 
   /* Button colors (Default) */
   --color-button-default: #fff;
@@ -25,10 +26,10 @@
   --color-button-primary--text: #fff;
 
   /* Button colors (Simple) */
-  --color-button-primary: #fff;
-  --color-button-primary--border: #fff;
-  --color-button-primary--hover: #db0000;
-  --color-button-primary--text: #8a8a8a;
+  --color-button-simple: #fff;
+  --color-button-simple--border: #fff;
+  --color-button-simple--hover: #db0000;
+  --color-button-simple--text: #8a8a8a;
 
   /* Input colors */
   --color-input--text: #3c3c3c;
