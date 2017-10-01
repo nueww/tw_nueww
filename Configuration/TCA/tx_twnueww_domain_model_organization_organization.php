@@ -1,35 +1,32 @@
 <?php
 return array(
     'ctrl' => array(
-        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person',
-        'label' => 'last_name',
-        'label_alt' => 'first_name',
-        'label_alt_force' => 1,
+        'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization',
+        'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'dividers2tabs' => true,
-        'default_sortby' => 'last_name DESC, first_name DESC',
+        'default_sortby' => 'title',
         'delete' => 'deleted',
         'enablecolumns' => array(
             'disabled' => 'hidden'
         ),
-        'searchFields' => 'first_name,last_name,email,job,description',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Person.png',
+        'searchFields' => 'title, description',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Organization.png',
     ),
     'interface' => array(
-        'showRecordFieldList' => 'hidden, first_name, last_name',
+        'showRecordFieldList' => 'hidden, title',
     ),
     'types' => array(
-        '1' => array('showitem' => 'images,
-        --palette--;;name,--palette--;;contact,--palette--;;info,job, description;;;richtext:rte_transform[mode=ts_links],
+        '1' => array('showitem' => 'images,title,address,sectors,
+        --palette--;;contact,
         --div--;Social,--palette--;;social,
         --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,hidden;;1'
         ),
     ),
     'palettes' => array(
-        'name' => array('showitem' => 'first_name, last_name'),
-        'contact' => array('showitem' => 'email, phone, wwww, address'),
+        'contact' => array('showitem' => 'email, phone, www'),
         'social' => array('showitem' => 'facebook, twitter, xing, linkedin, instagram'),
     ),
     'columns' => array(
@@ -40,18 +37,9 @@ return array(
                 'type' => 'check',
             ),
         ),
-        'first_name' => array(
+        'title' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.first_name',
-            'config' => array(
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
-            ),
-        ),
-        'last_name' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.last_name',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.title',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -60,7 +48,7 @@ return array(
         ),
         'address' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.address',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.address',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -70,7 +58,7 @@ return array(
         ),
         'description' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.description',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.description',
             'config' => array(
                 'type' => 'text',
                 'cols' => 40,
@@ -96,7 +84,7 @@ return array(
         ),
         'images' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.images',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.images',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'images',
                 array(
@@ -144,7 +132,7 @@ return array(
         ),
         'www' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.www',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.www',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -153,7 +141,7 @@ return array(
         ),
         'phone' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.phone',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.phone',
             'config' => array(
                 'type' => 'input',
                 'size' => 64,
@@ -162,16 +150,7 @@ return array(
         ),
         'email' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.email',
-            'config' => array(
-                'type' => 'input',
-                'size' => 128,
-                'eval' => 'trim'
-            ),
-        ),
-        'job' => array(
-            'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.job',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.email',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -180,7 +159,7 @@ return array(
         ),
         'facebook' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.facebook',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.facebook',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -189,7 +168,7 @@ return array(
         ),
         'twitter' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.twitter',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.twitter',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -198,7 +177,7 @@ return array(
         ),
         'xing' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.xing',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.xing',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -207,7 +186,7 @@ return array(
         ),
         'linkedin' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.linkedin',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.linkedin',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
@@ -216,11 +195,25 @@ return array(
         ),
         'instagram' => array(
             'exclude' => 0,
-            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_person.instagram',
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.instagram',
             'config' => array(
                 'type' => 'input',
                 'size' => 128,
                 'eval' => 'trim'
+            ),
+        ),
+        'sectors' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_fischer/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_organization_organization.sectors',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_twnueww_domain_model_organization_sector',
+                'MM' => 'tx_twnueww_organization_sector_mm',
+                'size' => 3,
+                'autoSizeMax' => 10,
+                'maxitems' => 9999,
+                'multiple' => 0,
             ),
         ),
     ),
