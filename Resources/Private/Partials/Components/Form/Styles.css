@@ -1,0 +1,39 @@
+/**
+Form goes into vertical alignment mode for labels and inputs on mobile by default.
+On desktop it defaults to horizontal mode and can be set to vertical mode, too.
+ */
+
+.nueww-form {
+  display: block;
+
+  & .nueww-button[type="submit"] {
+    align-self: center;
+  }
+
+  @media (--breakpoint--large) {
+    display: grid;
+    grid-template-columns: minmax($(rem(100)), 1fr) 3 fr;
+    width: 100%;
+
+    @for $i from 1 to 30 {
+      & > :nth-child($(i)) {
+        -ms-grid-row: $(i);
+      }
+    }
+
+    & .nueww-button[type="submit"] {
+      grid-column: 2;
+      justify-self: left;
+      min-width: 0;
+    }
+
+    &--vertical {
+      display: flex;
+      flex-direction: column;
+
+      .nueww-button[type="submit"] {
+        align-self: center;
+      }
+    }
+  }
+}

@@ -30,19 +30,19 @@ nueww-input-dropdown-group--input">
     </f:if>
     :</label>
   <select id="nueww-input-dropdown-{uuid}"
-         class="nueww-input-dropdown__input"
-         {f:if(condition: '{name}', then: ' name="{name}"')}
-  {f:if(condition: '{type}', then: ' type="{type}"')}
-  {f:if(condition: '{value}', then: ' value="{value}"')}
+          class="nueww-input-dropdown__input"
+          {f:if(condition: '{name}', then: ' name="{name}"')}
   {f:if(condition: '{autocomplete}', then: ' autocomplete="{autocomplete}"')}
   {f:if(condition: '{required}', then: ' required')}
   {f:if(condition: '{disabled}', then: ' disabled')}
   {f:if(condition: '{readonly}', then: ' readonly')}
   >
-  <option value="">---  {f:if(condition: '{placeholder}', then: '{placeholder}', else: 'Bitte wählen')} ---</option>
-  <f:for each="{options}" as="optionLabel" key="optionValue">
-    <option value="{optionValue}">{optionLabel}</option>
-  </f:for>
-</select>
+  <option value="">--- {f:if(condition: '{placeholder}', then: '{placeholder}', else: 'Bitte wählen')} ---</option>
+  <f:if condition="{options}">
+    <f:for each="{options}" as="option">
+      <option value="{option.value}" {f:if(condition: '{value} && {value} == {option.value}', then: ' selected')}>{option.label}</option>
+    </f:for>
+  </f:if>
+  </select>
 </div>
 </html>

@@ -4,6 +4,9 @@
           product-name="tw_nueww">
         <header/>
         <body>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
             <trans-unit id="list_type.blog">
                 <source>NUEWW Blog</source>
             </trans-unit>
