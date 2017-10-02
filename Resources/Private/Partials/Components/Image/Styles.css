@@ -1,0 +1,38 @@
+.nueww-image {
+  display: inline-block;
+  width: 100%;
+  min-width: 1px;
+  min-height: 1px;
+  color: #000;
+  border: none;
+  animation: nueww-fade-in 600ms;
+  animation-fill-mode: both;
+
+  &__sizer {
+    display: block;
+
+    .js & {
+      box-shadow: inset 0 0 0 1px #ccc;
+    }
+  }
+
+  &__fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+div.nueww-image {
+  position: relative;
+  overflow: hidden;
+
+  .js & {
+    @mixin shimmer;
+
+    background-color: transparent;
+    animation: none;
+  }
+}
