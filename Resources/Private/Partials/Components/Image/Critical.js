@@ -49,7 +49,7 @@
     observer.observe(elem);
   }
 
-  window.nueww.observer.register('div.park-image', (elem) => {
+  window.nueww.observer.register('div.nueww-image', (elem) => {
     lazyLoad(elem);
   }, false);
 })();

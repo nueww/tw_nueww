@@ -3,6 +3,7 @@
   width: 100%;
   min-width: 1px;
   min-height: 1px;
+  height: auto;
   color: #000;
   border: none;
   animation: nueww-fade-in 600ms;
@@ -31,8 +32,5 @@ div.nueww-image {
 
   .js & {
     @mixin shimmer;
-
-    background-color: transparent;
-    animation: none;
   }
 }
