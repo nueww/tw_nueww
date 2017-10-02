@@ -67,7 +67,6 @@ CREATE TABLE tx_twnueww_domain_model_blog_series (
   hidden    TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
 
   title     VARCHAR(255) DEFAULT ''         NOT NULL,
-  articles  INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
