@@ -1,0 +1,8 @@
+lib.form {
+    blogComment = RECORDS
+    blogComment {
+        tables = tt_content
+        source = 7
+        dontCheckPid = 1
+    }
+}

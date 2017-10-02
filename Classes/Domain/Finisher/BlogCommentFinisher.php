@@ -26,13 +26,26 @@
 namespace Tollwerk\TwNueww\Domain\Finisher;
 
 
+
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
 class BlogCommentFinisher extends AbstractFinisher
 {
     protected function executeInternal()
     {
-        die("woot");
-        // TODO: Implement executeInternal() method.
+
+//        $formRuntime = $this->finisherContext->getFormRuntime();
+//        $request = $formRuntime->getRequest();
+//        $response = $formRuntime->getResponse();
+//
+//
+//
+//        $response->setHeader();
+//
+//        $values = $this->finisherContext->getFormValues();
+//        $additionalParameters = 'tx_twnueww_blog[article]=' . $values['article'] . '&tx_twnueww_blog[action]=' . $values['action'] . '&tx_twnueww_blog[controller]=' . urlencode($values['controller']);
+//
+//        $this->redirect($GLOBALS['TSFE']->id, $additionalParameters);
+
     }
 }
