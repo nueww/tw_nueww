@@ -40,6 +40,9 @@
             <trans-unit id="tabs.social">
                 <source>Social</source>
             </trans-unit>
+            <trans-unit id="tabs.tags">
+                <source>Tags</source>
+            </trans-unit>
             <trans-unit id="tabs.references">
                 <source>References</source>
             </trans-unit>
@@ -70,11 +73,20 @@
             <trans-unit id="tx_twnueww_domain_model_sponsoring.type.3">
                 <source>Type #3</source>
             </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_tag">
+                <source>Blog tag</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_tag.title">
+                <source>Title</source>
+            </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article">
                 <source>Blog article</source>
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article.persons">
                 <source>Authors</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.tags">
+                <source>Tags</source>
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article.organizations">
                 <source>Organizations</source>
