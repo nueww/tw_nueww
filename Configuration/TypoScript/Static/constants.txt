@@ -2,6 +2,7 @@
 # customsubcategory=file=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:file
 # customsubcategory=blog=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:blog
 # customsubcategory=person=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:person
+# customsubcategory=downloads=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:downloads
 
 plugin.tx_twnueww {
     view {
@@ -21,6 +22,11 @@ plugin.tx_twnueww {
 
         person {
             # cat=plugin.tx_twnueww/person/100; type=int; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:storagePid
+            storagePid = 0
+        }
+
+        downloads {
+            # cat=plugin.tx_twnueww/downloads/100; type=int; label=LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:storagePid
             storagePid = 0
         }
     }

@@ -13,6 +13,15 @@
             <trans-unit id="list_type.person">
                 <source>NUEWW Person</source>
             </trans-unit>
+            <trans-unit id="list_type.download">
+                <source>NUEWW Downloads</source>
+            </trans-unit>
+            <trans-unit id="flex.download.collection">
+                <source>File collection</source>
+            </trans-unit>
+            <trans-unit id="flex.download.files">
+                <source>Files</source>
+            </trans-unit>
             <trans-unit id="file" xml:space="preserve">
 				<source>Files &amp; directories</source>
 			</trans-unit>
@@ -215,6 +224,9 @@
             <trans-unit id="tx_twnueww_domain_model_organization_sector.title">
                 <source>Title</source>
             </trans-unit>
+            <trans-unit id="downloads">
+                            <source>Downloads</source>
+                        </trans-unit>
         </body>
     </file>
 </xliff>
