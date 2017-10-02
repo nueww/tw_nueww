@@ -34,12 +34,13 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Download;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
-use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Resource\Collection\StaticFileCollection;
+use TYPO3\CMS\Core\Resource\FileCollectionRepository;
 
-class DownloadComponent extends FluidTemplateComponent
+class DownloadListComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -57,12 +58,15 @@ class DownloadComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Download/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Downloads/Template.html');
 
-        $resourceFactory = ResourceFactory::getInstance();
-        $download = $resourceFactory->getFileReferenceObject(1);
-        $this->setParameter('download', $download);
+        $fileCollectionRepository = $this->objectManager->get(FileCollectionRepository::class);
+        /** @var StaticFileCollection $downloads */
+        $downloads = $fileCollectionRepository->findByUid(1);
+        $downloads->loadContents();
+        $this->setParameter('downloads', $downloads->getItems());
 
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Downloads.min.css');
         $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Download.min.css');
     }
 }
