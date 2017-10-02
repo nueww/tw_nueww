@@ -36,8 +36,9 @@
 
 namespace Tollwerk\TwNueww\Controller;
 
-use TYPO3\CMS\Core\Resource\FileCollectionRepository;
 use TYPO3\CMS\Core\Resource\Collection\StaticFileCollection;
+use TYPO3\CMS\Core\Resource\FileCollectionRepository;
+use TYPO3\CMS\Core\Resource\FileRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -46,14 +47,23 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class DownloadController extends ActionController
 {
     /**
+     * File collection repository
+     *
      * @var \TYPO3\CMS\Core\Resource\FileCollectionRepository
      */
     protected $fileCollectionRepository;
 
     /**
+     * File repository
+     *
+     * @var \TYPO3\CMS\Core\Resource\FileRepository
+     */
+    protected $fileRepository;
+
+    /**
      * Inject the file collection repository
      *
-     * @param \TYPO3\CMS\Core\Resource\FileCollectionRepository $fileCollectionRepository
+     * @param \TYPO3\CMS\Core\Resource\FileCollectionRepository $fileCollectionRepository File collection repository
      */
     public function injectFileCollectionRepository(FileCollectionRepository $fileCollectionRepository)
     {
@@ -61,10 +71,22 @@ class DownloadController extends ActionController
     }
 
     /**
+     * Inject the file repository
+     *
+     * @param \TYPO3\CMS\Core\Resource\FileRepository $fileRepository File repository
+     */
+    public function injectFileRepository(FileRepository $fileRepository)
+    {
+        $this->fileRepository = $fileRepository;
+    }
+
+    /**
      * List action
      */
     public function listAction()
     {
+        $collection = [];
+
         // If it's a file collection
         if (intval($this->settings['collection'])) {
             /** @var StaticFileCollection $collection */
@@ -73,10 +95,11 @@ class DownloadController extends ActionController
             $collection = $collection->getItems();
 
             // Else it's a compilation of single files
-        } else {
-            $collection = [];
-
+        } elseif (intval($this->settings['files'])) {
+            $contentObjectId = $this->configurationManager->getContentObject()->data['uid'];
+            $collection = $this->fileRepository->findByRelation('tt_content', 'nueww_downloads', $contentObjectId);
         }
+
         $this->view->assign('collection', $collection);
     }
 }

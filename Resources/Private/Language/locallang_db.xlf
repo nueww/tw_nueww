@@ -19,6 +19,9 @@
             <trans-unit id="flex.download.collection">
                 <source>File collection</source>
             </trans-unit>
+            <trans-unit id="flex.download.collection.select">
+                <source>--- Please select collection ---</source>
+            </trans-unit>
             <trans-unit id="flex.download.files">
                 <source>Files</source>
             </trans-unit>

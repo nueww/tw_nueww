@@ -21,7 +21,12 @@
                                 <renderType>selectSingle</renderType>
                                 <foreign_table>sys_file_collection</foreign_table>
                                 <foreign_table_where>ORDER BY sys_file_collection.title</foreign_table_where>
-
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:flex.download.collection.select</numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                </items>
                             </config>
                         </TCEforms>
                     </settings.collection>
@@ -54,6 +59,7 @@
                                     <showPossibleLocalizationRecords>0</showPossibleLocalizationRecords>
                                     <showRemovedLocalizationRecords>0</showRemovedLocalizationRecords>
                                     <showSynchronizationLink>0</showSynchronizationLink>
+                                    <fileUploadAllowed >0</fileUploadAllowed >
                                 </appearance>
                                 <behaviour type="array">
                                     <localizationMode>select</localizationMode>
@@ -62,13 +68,13 @@
                                 <foreign_field>uid_foreign</foreign_field>
                                 <foreign_label>uid_local</foreign_label>
                                 <foreign_match_fields type="array">
-                                    <fieldname>media</fieldname>
+                                    <fieldname>nueww_downloads</fieldname>
                                 </foreign_match_fields>
                                 <foreign_selector>uid_local</foreign_selector>
                                 <foreign_selector_fieldTcaOverride type="array">
                                     <config type="array">
                                         <appearance type="array">
-                                            <elementBrowserAllowed></elementBrowserAllowed>
+                                            <elementBrowserAllowed/>
                                             <elementBrowserType>file</elementBrowserType>
                                         </appearance>
                                     </config>

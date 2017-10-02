@@ -1,5 +1,3 @@
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
-    <f:for each="{collection}" as="file">
-        <f:debug>{file}</f:debug>
-    </f:for>
+    <f:render partial="Components/Downloads/Template" arguments="{_all}"/>
 </html>
