@@ -42,6 +42,7 @@ CREATE TABLE tx_twnueww_domain_model_blog_article (
   body_text     TEXT DEFAULT ''                 NOT NULL,
   images        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
   tags          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  comments      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
   tstamp        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
   crdate        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
@@ -53,6 +54,27 @@ CREATE TABLE tx_twnueww_domain_model_blog_article (
   series        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
   persons       INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
   organizations INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+
+CREATE TABLE tx_twnueww_domain_model_blog_comment (
+
+  uid            INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid            INT(11) DEFAULT '0'             NOT NULL,
+  tstamp         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted        TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden         TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+
+  name           VARCHAR(255) DEFAULT ''         NOT NULL,
+  email          VARCHAR(255) DEFAULT ''         NOT NULL,
+  text           TEXT DEFAULT ''                 NOT NULL,
+  admin_response TEXT DEFAULT ''                 NOT NULL,
+  article        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)

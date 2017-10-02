@@ -43,6 +43,9 @@
             <trans-unit id="tabs.tags">
                 <source>Tags</source>
             </trans-unit>
+            <trans-unit id="tabs.comments">
+                <source>Comments</source>
+            </trans-unit>
             <trans-unit id="tabs.references">
                 <source>References</source>
             </trans-unit>
@@ -73,6 +76,22 @@
             <trans-unit id="tx_twnueww_domain_model_sponsoring.type.3">
                 <source>Type #3</source>
             </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_comment">
+                <source>Blog comment</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_comment.name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_comment.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_comment.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_comment.admin_response">
+                <source>Admin response</source>
+            </trans-unit>
+
             <trans-unit id="tx_twnueww_domain_model_blog_tag">
                 <source>Blog tag</source>
             </trans-unit>
@@ -105,6 +124,9 @@
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article.series">
                 <source>Blog Series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.comments">
+                <source>Comments</source>
             </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_series">
                 <source>Blog series</source>

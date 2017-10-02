@@ -1,0 +1,45 @@
+
+renderingOptions:
+  submitButtonLabel: 'Kommentar absenden'
+type: Form
+identifier: blogComment
+label: 'Blog Kommentar'
+prototypeName: standard
+finishers:
+  -
+       identifier: DeleteUploads
+  -
+       identifier: BlogComment
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: Step
+    renderables:
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-1
+        label: Name
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        type: Text
+        identifier: text-2
+        label: E-Mail
+        validators:
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: textarea-1
+        label: Text
