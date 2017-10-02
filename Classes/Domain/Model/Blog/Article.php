@@ -68,6 +68,27 @@ class Article extends AbstractEntity
     protected $tstamp = 0;
 
     /**
+     * Blog series
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series>
+     * @lazy
+     */
+    protected $series = null;
+
+    /**
+     * Persons
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Person>
+     * @lazy
+     */
+    protected $persons = null;
+
+    /**
+     * Organizations
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Organization\Organization>
+     * @lazy
+     */
+    protected $organizations = null;
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -181,6 +202,136 @@ class Article extends AbstractEntity
     }
 
 
+    /**
+     * Adds a Series
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Series $series
+     * @return void
+     */
+    public function addSeries(\Tollwerk\TwNueww\Domain\Model\Blog\Series $series)
+    {
+        $this->series->attach($series);
+    }
+
+    /**
+     * Removes a Series
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Series $seriesToRemove The Series to be removed
+     * @return void
+     */
+    public function removeSeries(\Tollwerk\TwNueww\Domain\Model\Blog\Series $seriesToRemove)
+    {
+        $this->series->detach($seriesToRemove);
+    }
+
+    /**
+     * Returns the series
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series>
+     */
+    public function getSeries()
+    {
+        return $this->series;
+    }
+
+    /**
+     * Sets the series
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series> $series
+     * @return void
+     */
+    public function setSeries(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $series)
+    {
+        $this->series = $series;
+    }
+
+
+    /**
+     * Adds a Person
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Person $person
+     * @return void
+     */
+    public function addPerson(\Tollwerk\TwNueww\Domain\Model\Person $person)
+    {
+        $this->persons->attach($person);
+    }
+
+    /**
+     * Removes a Person
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Person $personToRemove The Person to be removed
+     * @return void
+     */
+    public function removePerson(\Tollwerk\TwNueww\Domain\Model\Person $personToRemove)
+    {
+        $this->persons->detach($personToRemove);
+    }
+
+    /**
+     * Returns the persons
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Persons>
+     */
+    public function getPersons()
+    {
+        return $this->persons;
+    }
+
+    /**
+     * Sets the persons
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Person> $persons
+     * @return void
+     */
+    public function setPersons(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $persons)
+    {
+        $this->persons = $persons;
+    }
+
+
+    /**
+     * Adds a Organization
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Organization\Organization $organization
+     * @return void
+     */
+    public function addOrganization(\Tollwerk\TwNueww\Domain\Model\Organization\Organization $organization)
+    {
+        $this->organizations->attach($organization);
+    }
+
+    /**
+     * Removes a Organization
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Organization\Organization $organizationToRemove The Organization to be removed
+     * @return void
+     */
+    public function removeOrganization(\Tollwerk\TwNueww\Domain\Model\Organization\Organization $organizationToRemove)
+    {
+        $this->organizations->detach($organizationToRemove);
+    }
+
+    /**
+     * Returns the organizations
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Organization\Organizations>
+     */
+    public function getOrganizations()
+    {
+        return $this->organizations;
+    }
+
+    /**
+     * Sets the organizations
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Organization\Organization> $organizations
+     * @return void
+     */
+    public function setOrganizations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizations)
+    {
+        $this->organizations = $organizations;
+    }
 
 
 
