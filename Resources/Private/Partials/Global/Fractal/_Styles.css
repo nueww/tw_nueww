@@ -4,33 +4,42 @@ html {
   height: 100%;
 
   &::before {
-    content: '';
+    content: 'Breakpoint';
     display: block;
     position: fixed;
     bottom: 24px;
     right: 24px;
     z-index: 10000;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+
+    border-radius: 2rem;
     background: #eee;
     will-change: transition;
     transition: 100ms background;
+    padding: .125rem .75rem;
+
+    font-family: 'Open Sans', Arial;
+    font-size: .75rem;
+    color: rgba(0, 0, 0, .8);
 
     @media (--breakpoint--small) {
+      content: 'small';
       background: #FFEE58;
     }
 
     @media (--breakpoint--medium) {
+      content: 'medium';
+      color: rgba(255, 255, 255, .8);
       background: #FFA726;
     }
 
     @media (--breakpoint--large) {
+      content: 'large';
       background: #FF5722;
     }
 
     @media (--breakpoint--xlarge) {
-      background: #263238;
+      content: 'xlarge';
+      background: #E53935;
     }
   }
 }
