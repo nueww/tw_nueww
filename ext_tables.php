@@ -15,22 +15,39 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_blog_series');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_blog_tag');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_person');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_organization_organization');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_organization_sector');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+    'tx_twnueww_domain_model_organization_organization'
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
+    'tx_twnueww_domain_model_organization_sector'
+);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_twnueww_domain_model_sponsoring');
 
 
 // Register Plugins
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Tollwerk.' . $_EXTKEY,
+    'Tollwerk.'.$_EXTKEY,
     'Blog',
     'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:list_type.blog',
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Article.png'
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Article.png'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Tollwerk.' . $_EXTKEY,
+    'Tollwerk.'.$_EXTKEY,
     'Person',
     'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:list_type.person',
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Person.png'
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Person.png'
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+    'Tollwerk.'.$_EXTKEY,
+    'Download',
+    'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:list_type.download',
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww').'Resources/Public/Icons/Download.png'
+);
+$pluginSignature = str_replace('_', '', $_EXTKEY).'_download';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    $pluginSignature,
+    'FILE:EXT:'.$_EXTKEY.'/Configuration/FlexForms/Download.xml'
 );

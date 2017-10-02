@@ -31,3 +31,14 @@ if (!defined('TYPO3_MODE')) {
         'Person' => '',
     ]
 );
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Tollwerk.'.$_EXTKEY,
+    'Download',
+    [
+        'Download' => 'list',
+    ],
+    [
+        'Download' => '',
+    ]
+);

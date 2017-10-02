@@ -50,16 +50,18 @@ class ArticleController extends ActionController
     /**
      * List action
      */
-    public function listAction(){
+    public function listAction()
+    {
         $articles = $this->articleRepository->findAll();
-        $this->view->assign('articles',$articles);
+        $this->view->assign('articles', $articles);
     }
 
     /**
      * Show action
      * @param \Tollwerk\TwNueww\Domain\Model\Blog\Article $article
      */
-    public function showAction(Article $article = null){
+    public function showAction(Article $article = null)
+    {
         $this->view->assign('article', $article);
     }
 }
