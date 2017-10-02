@@ -1,0 +1,6 @@
+:root {
+  /* Transitions */
+  --transition: 150ms cubic-bezier(.45, .05, .55, .95);
+  --transition--slow: 250ms cubic-bezier(.45, .05, .55, .95);
+  --transition--snappy: 120ms cubic-bezier(1, 0, 0, 1);
+}

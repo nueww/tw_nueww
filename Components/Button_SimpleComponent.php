@@ -11,7 +11,7 @@
  * @license http://opensource.org/licenses/MIT The MIT License (MIT)
  */
 
-/***********************************************************************************
+/*************************  **********************************************************
  *  The MIT License (MIT)
  *
  *  Copyright © 2017 Joschi Kuphal <joschi@kuphal.net> / @jkphl
@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class ButtonComponent extends FluidTemplateComponent
+class Button_SimpleComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -46,6 +46,13 @@ class ButtonComponent extends FluidTemplateComponent
      * @var int
      */
     protected $status = self::STATUS_WIP;
+
+    /**
+     * Alternative label
+     *
+     * @var string
+     */
+    protected $label = 'Button (Simple)';
 
     /**
      * Configure the component
@@ -58,7 +65,7 @@ class ButtonComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Button/Template.html');
 
-        $this->setParameter('variant', null);
+        $this->setParameter('variant', 'simple');
         $this->setParameter('label', 'All Events');
         $this->setParameter('type', null);
         $this->setParameter('href', null);

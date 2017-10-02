@@ -1,11 +1,11 @@
 :root {
   /* Border radius */
-  --border-radius--button: 50%;
+  --border-radius--button: 2.5rem;
   --border-radius--input: 4px;
 
   /* Spacing */
   --layout-spacing: 24px;
-  --layout-spacing--micro: calc(var(--layout-spacing) / 6);                                    /* 4px */
+  --layout-spacing--micro: calc(var(--layout-spacing) / 6);
   --layout-spacing--xtiny: calc(var(--layout-spacing) / 4);                                    /* 6px */
   --layout-spacing--tiny: calc(var(--layout-spacing) / 3);                                     /* 8px */
   --layout-spacing--xsmall: calc(var(--layout-spacing) / 2);                                   /* 12px */

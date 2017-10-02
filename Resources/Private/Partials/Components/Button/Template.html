@@ -1,6 +1,7 @@
 <f:comment><!--
 
     @param string label         Text label on the button
+    @param string variant       Button variant
     @param string type          Button type, if button element
     @param string href          URL, if link element
     @param string target        Target, if link element
@@ -18,14 +19,14 @@
 </f:if>
 
 <f:section name="Link">
-  <a class="nueww-button" {f:if(condition:
+  <a class="nueww-button{f:if(condition: '{variant}', then: ' nueww-button--{variant}')}" {f:if(condition:
   '{target}', then: ' target="{target}" rel="nofollow noopener"')}>
   <f:render section="Label" arguments="{_all}"/>
   </a>
 </f:section>
 
 <f:section name="Button">
-  <button class="nueww-button" {f:if(condition:
+  <button class="nueww-button{f:if(condition: '{variant}', then: ' nueww-button--{variant}')}" {f:if(condition:
   '{type}', then: ' type="{type}"', else: ' type="button"')}>
   <f:render section="Label" arguments="{_all}"/>
   </button>
@@ -37,6 +38,4 @@
   </f:if>
   {label}
 </f:section>
-
 </html>
-

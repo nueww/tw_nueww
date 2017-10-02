@@ -51,6 +51,5 @@
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   width: 100%;
-  /* The following needs to be 16px+ so that mobile devices don't zoom in */
-  font-size: 16px;
+  font-size: rem(16);  /* Needs to be 16px+ so that mobile devices don't zoom in */
 }
