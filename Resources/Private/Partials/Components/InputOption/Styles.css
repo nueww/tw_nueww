@@ -1,8 +1,7 @@
 .nueww-input-option {
   display: block;
-  font-size: 0;
 
-  @media (--breakpoint--large) {
+  @media (--breakpoint--medium) {
     display: grid;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
@@ -20,7 +19,7 @@
   }
 
   &__label--is-hidden {
-    @extend %labels--hidden;
+    @mixin labels--hidden;
   }
 
   &__input {
@@ -35,7 +34,7 @@
   &__label,
   &__input {
     display: inline-block;
-    vertical-align: top;
+    vertical-align: middle;
   }
 
   &__required {
