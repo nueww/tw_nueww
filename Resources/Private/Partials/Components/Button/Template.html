@@ -1,6 +1,7 @@
 <f:comment><!--
 
     @param string label         Text label on the button
+    @param string variant       Button variant
     @param string type          Button type, if button element
     @param string href          URL, if link element
     @param string target        Target, if link element
@@ -9,25 +10,32 @@
 --></f:comment>
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{href}">
-    <f:then>
-        <a class="nueww-button" {f:if(condition:
-        '{target}', then: ' target="{target}" rel="nofollow noopener"')}>
-    </f:then>
-    <f:else>
-        <button class="nueww-button" {f:if(condition:
-        '{type}', then: ' type="{type}"', else: ' type="button"')}>
-    </f:else>
+  <f:then>
+    <f:render section="Link" arguments="{_all}"/>
+  </f:then>
+  <f:else>
+    <f:render section="Button" arguments="{_all}"/>
+  </f:else>
 </f:if>
-<f:if condition="{icon}">
-    <f:render partial="Icons/Star.svg"/>
-</f:if>
-{label}
-<f:if condition="{href}">
-    <f:then>
-        </a>
-    </f:then>
-    <f:else>
-        </button>
-    </f:else>
-</f:if>
+
+<f:section name="Link">
+  <a class="nueww-button{f:if(condition: '{variant}', then: ' nueww-button--{variant}')}" {f:if(condition:
+  '{target}', then: ' target="{target}" rel="nofollow noopener"')}>
+  <f:render section="Label" arguments="{_all}"/>
+  </a>
+</f:section>
+
+<f:section name="Button">
+  <button class="nueww-button{f:if(condition: '{variant}', then: ' nueww-button--{variant}')}" {f:if(condition:
+  '{type}', then: ' type="{type}"', else: ' type="button"')}>
+  <f:render section="Label" arguments="{_all}"/>
+  </button>
+</f:section>
+
+<f:section name="Label">
+  <f:if condition="{icon}">
+    <f:render partial="Icons/{icon}.svg"/>
+  </f:if>
+  {label}
+</f:section>
 </html>

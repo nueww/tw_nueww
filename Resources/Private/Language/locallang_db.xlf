@@ -4,9 +4,15 @@
           product-name="tw_nueww">
         <header/>
         <body>
-			<trans-unit id="list_type.blog">
-				<source>NUEWW Blog</source>
-			</trans-unit>
+            <trans-unit id="categories">
+                <source>Categories</source>
+            </trans-unit>
+            <trans-unit id="list_type.blog">
+                <source>NUEWW Blog</source>
+            </trans-unit>
+            <trans-unit id="list_type.person">
+                <source>NUEWW Person</source>
+            </trans-unit>
             <trans-unit id="file" xml:space="preserve">
 				<source>Files &amp; directories</source>
 			</trans-unit>
@@ -25,21 +31,190 @@
 			<trans-unit id="common.enable" xml:space="preserve">
 				<source>Enable this extension</source>
 			</trans-unit>
-			<trans-unit id="blog">
-				<source>Blog</source>
-			</trans-unit>
-			<trans-unit id="blog.storagePid">
-				<source>Storage pid</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_blog_article">
-				<source>Blog article</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_article.title">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_twnueww_domain_model_article.body_text">
-				<source>Body text</source>
-			</trans-unit>
+            <trans-unit id="blog">
+                <source>Blog</source>
+            </trans-unit>
+            <trans-unit id="storagePid">
+                <source>Storage pid</source>
+            </trans-unit>
+            <trans-unit id="tabs.social">
+                <source>Social</source>
+            </trans-unit>
+            <trans-unit id="tabs.references">
+                <source>References</source>
+            </trans-unit>
+            <trans-unit id="tabs.nested_content">
+                <source>Nested content</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring">
+                <source>Sponsoring</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.series">
+                <source>Blog series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.1">
+                <source>Type #1</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.2">
+                <source>Type #2</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_sponsoring.type.3">
+                <source>Type #3</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article">
+                <source>Blog article</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.persons">
+                <source>Authors</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.organizations">
+                <source>Organizations</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.teaser_text">
+                <source>Teaser text</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.body_text">
+                <source>Body text</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.images">
+                <source>Images</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.series">
+                <source>Blog Series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series">
+                <source>Blog series</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_series.articles">
+                <source>Articles</source>
+            </trans-unit>
+            <trans-unit id="person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.images">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.first_name">
+                <source>First name</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.last_name">
+                <source>Last name</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.www">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.job">
+                <source>job</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.description">
+                <source>description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.twitter">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.xing">
+                <source>Xing</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.linkedin">
+                <source>LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_person.instagram">
+                <source>Instagram</source>
+            </trans-unit>
+            
+            <trans-unit id="organization">
+                <source>Organization</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization">
+                <source>Organization</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.images">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.www">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.address">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.job">
+                <source>job</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.description">
+                <source>description</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.facebook">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.twitter">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.xing">
+                <source>Xing</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.linkedin">
+                <source>LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.instagram">
+                <source>Instagram</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_organization.sectors">
+                <source>Sectors</source>
+            </trans-unit>
+            <trans-unit id="sector">
+                <source>Organization Sector</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_sector">
+                <source>Organization Sector</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_organization_sector.title">
+                <source>Title</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

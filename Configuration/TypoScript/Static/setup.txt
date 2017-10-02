@@ -19,14 +19,6 @@ plugin.tx_twnueww {
     }
 
     persistence {
-        storagePid = {$plugin.tx_nueww.settings.blog.storagePid}
-    }
-
-    settings {
-        enable = {$plugin.tx_nueww.settings.enable}
-
-        blog {
-
-        }
+        storagePid = {$plugin.tx_twnueww.settings.person.storagePid},{$plugin.tx_twnueww.settings.blog.storagePid}
     }
 }

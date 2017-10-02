@@ -1,0 +1,26 @@
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+    <h1>Colors</h1>
+
+    <f:for each="{colorGroups}" as="colors" key="group">
+        <h2>{group}</h2>
+        <ul class="color-swatches">
+            <f:for each="{colors}" as="value" key="var">
+                <li>
+                    <figure>
+                        <div style="background-color:{value.hex}"></div>
+                        <figcaption>
+                            <dl>
+                                <dt>Variable</dt>
+                                <dd>{var}</dd>
+                                <dt>Hex</dt>
+                                <dd>{value.hex}</dd>
+                                <dt>RGB</dt>
+                                <dd>{value.rgb.r} / {value.rgb.g} / {value.rgb.b}</dd>
+                            </dl>
+                        </figcaption>
+                    </figure>
+                </li>
+            </f:for>
+        </ul>
+    </f:for>
+</html>

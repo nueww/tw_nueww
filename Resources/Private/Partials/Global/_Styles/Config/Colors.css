@@ -1,10 +1,48 @@
 :root {
-  --color-bg--page: #ffc107;
+  /* Background colors */
+  --color-bg--page: #ffe600;
+  --color-bg--card: #fff;
+  --color-bg--placeholder: #ebebeb;
+  --color-bg--tag: #ebebeb;
+  --color-bg--selection: color(#db0000 lightness(20%));
 
-  --color-text: #263238;
-  --color-text--light: #cfd8dc;
-  --color-text--medium: #607d8b;
+  /* Text colors */
+  --color-text: #3c3c3c;
+  --color-text--light: #8a8a8a;
+  --color-text--medium: #626262;
+  --color-text--hover: #db0000;
+  --color-text--inverse: #fff;
 
-  --color-primary: #bf360c;
-  --color-secondary: #1976d2;
+  /* Button colors (Default) */
+  --color-button-default: #fff;
+  --color-button-default--border: #0fa5e1;
+  --color-button-default--hover: #0c84b4;
+  --color-button-default--text: #8a8a8a;
+
+  /* Button colors (Primary) */
+  --color-button-primary: #0fa5e1;
+  --color-button-primary--border: #0fa5e1;
+  --color-button-primary--hover: #0c84b4;
+  --color-button-primary--text: #fff;
+
+  /* Button colors (Simple) */
+  --color-button-simple: #fff;
+  --color-button-simple--border: #fff;
+  --color-button-simple--hover: #0c84b4;
+  --color-button-simple--text: #8a8a8a;
+
+  /* Input colors */
+  --color-input--text: #3c3c3c;
+  --color-input--placeholder: #b1b1b1;
+  --color-input--bg: #fff;
+  --color-input--border: #d8d8d8;
+  --color-input--hover: #db0000;
+  --color-input--error: #ff0066;
+  --color-input--filled: #fffce5;
+
+  /* Status colors */
+  --color-status--danger: #d00;
+  --color-status--warning: #d00;
+  --color-status--success: #d00;
 }
+
