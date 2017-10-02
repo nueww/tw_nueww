@@ -15,8 +15,8 @@
 
   /* Button colors (Default) */
   --color-button-default: #fff;
-  --color-button-default--border: #db0000;
-  --color-button-default--hover: #db0000;
+  --color-button-default--border: #0fa5e1;
+  --color-button-default--hover: #0c84b4;
   --color-button-default--text: #8a8a8a;
 
   /* Button colors (Primary) */

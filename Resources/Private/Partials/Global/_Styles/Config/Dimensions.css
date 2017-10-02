@@ -1,6 +1,6 @@
 :root {
   /* Border radius */
-  --border-radius--button: 50%;
+  --border-radius--button: 2.5rem;
   --border-radius--input: 4px;
 
   /* Spacing */
