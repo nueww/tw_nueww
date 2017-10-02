@@ -73,6 +73,12 @@
             <trans-unit id="tx_twnueww_domain_model_blog_article">
                 <source>Blog article</source>
             </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.persons">
+                <source>Authors</source>
+            </trans-unit>
+            <trans-unit id="tx_twnueww_domain_model_blog_article.organizations">
+                <source>Organizations</source>
+            </trans-unit>
             <trans-unit id="tx_twnueww_domain_model_blog_article.title">
                 <source>Title</source>
             </trans-unit>
