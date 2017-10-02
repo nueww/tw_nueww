@@ -51,7 +51,6 @@
 
     &:hover,
     &:focus {
-      background-color: var(--color-button-simple--hover);
       color: var(--color-button-simple--hover);
       border-color: var(--color-button-simple--border);
     }

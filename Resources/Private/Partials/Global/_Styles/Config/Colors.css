@@ -20,15 +20,15 @@
   --color-button-default--text: #8a8a8a;
 
   /* Button colors (Primary) */
-  --color-button-primary: #db0000;
-  --color-button-primary--border: #db0000;
-  --color-button-primary--hover: #f7cccc;
+  --color-button-primary: #0fa5e1;
+  --color-button-primary--border: #0fa5e1;
+  --color-button-primary--hover: #0c84b4;
   --color-button-primary--text: #fff;
 
   /* Button colors (Simple) */
   --color-button-simple: #fff;
   --color-button-simple--border: #fff;
-  --color-button-simple--hover: #db0000;
+  --color-button-simple--hover: #0c84b4;
   --color-button-simple--text: #8a8a8a;
 
   /* Input colors */
