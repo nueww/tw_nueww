@@ -37,6 +37,7 @@
 namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
+use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
 
 class ArticleComponent extends FluidTemplateComponent
 {
@@ -58,14 +59,13 @@ class ArticleComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Article/Template.html');
 
-        $this->setParameter('headline-prio', 1);
-        $this->setParameter('title', 'NUEWW next year will be sponsored by ACME');
-        $this->setParameter('publDt', date('U'));
-        $this->setParameter('publDtFormat', 'j. M Y');
-        $this->setParameter('teaser', 'Regarding to the CEO of ACME, the sponsoring contract will be extended.');
-        $this->setParameter('href', '/');
+        /** @var ArticleRepository $articleRepository */
+        $articleRepository = $this->objectManager->get(ArticleRepository::class);
+        $article = $articleRepository->findByUid(1);
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
+        $this->setParameter('headingLevel', 1);
+        $this->setParameter('article', $article);
+
 //        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
     }
 }
