@@ -15,7 +15,7 @@ return array(
             'endtime' => 'endtime',
         ),
         'searchFields' => 'title,description',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Extension.png',
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('tw_nueww') . 'Resources/Public/Icons/Sponsoring.png',
     ),
     'interface' => array(
         'showRecordFieldList' => 'hidden, title',
