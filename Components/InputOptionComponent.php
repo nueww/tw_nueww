@@ -68,7 +68,6 @@ class InputOptionComponent extends FluidTemplateComponent
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputOption.min.css');
     }
 }
