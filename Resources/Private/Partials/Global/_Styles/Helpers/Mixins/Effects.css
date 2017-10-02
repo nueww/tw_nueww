@@ -1,0 +1,8 @@
+@define-mixin shimmer {
+  background-color: #ddd;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: nueww-shimmer;
+  animation-timing-function: linear;
+}

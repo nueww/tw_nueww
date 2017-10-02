@@ -1,0 +1,37 @@
+# Event Hub API
+
+`window.nueww.eventHub` lets you register events for elements via its `register()` method. The advantage in contrast to the usual `addEventHandler` method is that it practices event delegation so that it doesn't litter the DOM with event listeners. It thereby works similar to jQuery's `.delegate` or advanced `.on` methods.
+
+In addition to that, it also throttles events like `scroll` or `resize`.
+
+The `.register()` method expects three arguments:
+
+1) The name of the event to listen to, e.g `'click'`. You can also pass multiple events at oncy by separating them with space: `'click focus'`.
+2) A CSS selector or a DOM element to match the event against, e.g. `'a'` or `'a, button'` or `document`.
+3) A handler function that gets passed the event object as first argument.
+
+A few examples for its usage:
+
+```js
+window.nueww.eventHub.register('click', 'a', (e) => {
+  alert('Link clicked!')
+});
+```
+
+```js
+window.nueww.eventHub.register('click', 'a, button', (e) => {
+  alert('Link or button clicked!')
+});
+```
+
+```js
+window.nueww.eventHub.register('input change', 'input', (e) => {
+  alert(`Content of input with name ${e.target.name} has been modified!`)
+});
+```
+
+```js
+window.nueww.eventHub.register('resize', document, (e) => {
+  alert('Window resize happened!')
+});
+```
