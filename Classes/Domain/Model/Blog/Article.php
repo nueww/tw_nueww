@@ -87,6 +87,13 @@ class Article extends AbstractEntity
      * @lazy
      */
     protected $organizations = null;
+    
+    /**
+     * Tags
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tag>
+     * @lazy
+     */
+    protected $tags = null;
 
     /**
      * @return string
@@ -331,6 +338,49 @@ class Article extends AbstractEntity
     public function setOrganizations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $organizations)
     {
         $this->organizations = $organizations;
+    }
+
+    /**
+     * Adds a Tag
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag
+     * @return void
+     */
+    public function addTag(\Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag)
+    {
+        $this->tags->attach($tag);
+    }
+
+    /**
+     * Removes a Tag
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tagToRemove The Tag to be removed
+     * @return void
+     */
+    public function removeTag(\Tollwerk\TwNueww\Domain\Model\Blog\Tag $tagToRemove)
+    {
+        $this->tags->detach($tagToRemove);
+    }
+
+    /**
+     * Returns the tags
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tags>
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Sets the tags
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tag> $tags
+     * @return void
+     */
+    public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)
+    {
+        $this->tags = $tags;
     }
 
 

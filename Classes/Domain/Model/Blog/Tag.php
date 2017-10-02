@@ -30,7 +30,10 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Tag extends AbstractEntity
 {
-    protected $title;
+    /**
+     * @var string
+     */
+    protected $title = '';
 
     /**
      * @return mixed
