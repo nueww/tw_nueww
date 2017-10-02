@@ -68,6 +68,13 @@ class Article extends AbstractEntity
     protected $tstamp = 0;
 
     /**
+     * Blog series
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series>
+     * @lazy
+     */
+    protected $series = null;
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -181,6 +188,48 @@ class Article extends AbstractEntity
     }
 
 
+    /**
+     * Adds a Series
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Series $series
+     * @return void
+     */
+    public function addSeries(\Tollwerk\TwNueww\Domain\Model\Blog\Series $series)
+    {
+        $this->series->attach($series);
+    }
+
+    /**
+     * Removes a Series
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Series $seriesToRemove The Series to be removed
+     * @return void
+     */
+    public function removeSeries(\Tollwerk\TwNueww\Domain\Model\Blog\Series $seriesToRemove)
+    {
+        $this->series->detach($seriesToRemove);
+    }
+
+    /**
+     * Returns the series
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series>
+     */
+    public function getSeries()
+    {
+        return $this->series;
+    }
+
+    /**
+     * Sets the series
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Series> $series
+     * @return void
+     */
+    public function setSeries(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $series)
+    {
+        $this->series = $series;
+    }
 
 
 

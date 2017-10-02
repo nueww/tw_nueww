@@ -30,6 +30,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Series extends AbstractEntity
 {
+    /**
+     * @var string
+     */
     protected $title = '';
 
     /**
