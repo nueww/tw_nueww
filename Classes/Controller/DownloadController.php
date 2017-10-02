@@ -85,21 +85,21 @@ class DownloadController extends ActionController
      */
     public function listAction()
     {
-        $collection = [];
+        $downloads = [];
 
         // If it's a file collection
         if (intval($this->settings['collection'])) {
-            /** @var StaticFileCollection $collection */
-            $collection = $this->fileCollectionRepository->findByUid($this->settings['collection']);
-            $collection->loadContents();
-            $collection = $collection->getItems();
+            /** @var StaticFileCollection $downloads */
+            $downloads = $this->fileCollectionRepository->findByUid($this->settings['collection']);
+            $downloads->loadContents();
+            $downloads = $downloads->getItems();
 
             // Else it's a compilation of single files
         } elseif (intval($this->settings['files'])) {
             $contentObjectId = $this->configurationManager->getContentObject()->data['uid'];
-            $collection = $this->fileRepository->findByRelation('tt_content', 'nueww_downloads', $contentObjectId);
+            $downloads = $this->fileRepository->findByRelation('tt_content', 'nueww_downloads', $contentObjectId);
         }
 
-        $this->view->assign('collection', $collection);
+        $this->view->assign('downloads', $downloads);
     }
 }
