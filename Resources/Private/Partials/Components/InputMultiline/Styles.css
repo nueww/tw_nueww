@@ -12,6 +12,6 @@
   &__textarea {
     @mixin inputs;
 
-    min-height: 100px;
+    min-height: rem(100);
   }
 }
