@@ -64,7 +64,6 @@ class ButtonComponent extends FluidTemplateComponent
         $this->setParameter('icon', null);
         $this->setParameter('target', null);
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Button.min.css');
     }
 }

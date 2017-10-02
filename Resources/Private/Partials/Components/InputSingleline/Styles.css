@@ -1,16 +1,16 @@
 .nueww-input-singleline {
-  @extend %input-groups;
+  @mixin input-groups;
 
   &__label {
-    @extend %labels;
+    @mixin labels;
   }
 
   &__label--is-hidden {
-    @extend %labels--hidden;
+    @mixin labels--hidden;
   }
 
   &__input {
-    @extend %inputs;
+    @mixin inputs;
   }
 
   &__label,

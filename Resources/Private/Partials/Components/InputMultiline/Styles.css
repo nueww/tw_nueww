@@ -1,17 +1,17 @@
 .nueww-input-multiline {
-  @extend %input-groups;
+  @mixin input-groups;
 
   &__label {
-    @extend %labels;
+    @mixin labels;
   }
 
   &__label--is-hidden {
-    @extend %labels--hidden;
+    @mixin labels--hidden;
   }
 
   &__textarea {
-    @extend %inputs;
+    @mixin inputs;
 
-    min-height: rem(100);
+    min-height: 100px;
   }
 }
