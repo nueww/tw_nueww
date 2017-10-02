@@ -23,7 +23,7 @@ return array(
     'types' => array(
         '1' => array('showitem' =>
             'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,
-             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, series,
+             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, persons, organizations, series,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop'
         ),
     ),
@@ -121,6 +121,37 @@ return array(
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
         ),
+
+        'persons' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.persons',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_twnueww_domain_model_person',
+                'MM' => 'tx_twnueww_blog_article_person_mm',
+                'size' => 3,
+                'autoSizeMax' => 10,
+                'maxitems' => 9999,
+                'multiple' => 0,
+            ),
+        ),
+
+        'organizations' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.organizations',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
+                'foreign_table' => 'tx_twnueww_domain_model_organization_organization',
+                'MM' => 'tx_twnueww_blog_article_organization_mm',
+                'size' => 3,
+                'autoSizeMax' => 10,
+                'maxitems' => 9999,
+                'multiple' => 0,
+            ),
+        ),
+
         'series' => array(
             'exclude' => 0,
             'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.series',
