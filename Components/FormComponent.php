@@ -58,7 +58,11 @@ class FormComponent extends FluidTemplateComponent
     {
         $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Form/Template.html');
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Form.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputDropdown.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputMultiline.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputOption.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputSingleline.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Button.min.css');
     }
 }
