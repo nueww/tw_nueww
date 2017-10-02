@@ -64,6 +64,7 @@ class ImageComponent extends FluidTemplateComponent
         $this->setParameter('height', '329');
 
        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Image.min.css');
+       $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Components/Base.critical.min.js');
        $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Components/Image.critical.min.js');
     }
 }
