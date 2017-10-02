@@ -1,3 +1,4 @@
+{namespace n=Tollwerk\TwNueww\ViewHelpers}
 <f:comment><!--
 
     @param string headline-prio    Headline Priority Number (1-4)
@@ -5,21 +6,15 @@
     @param string publDt        Date object of Publish date
     @param string publDtFormat Date object of Publish date
     @param string teaser         Short text to summarize the content
-    @param string href           Target of the link
     @param string content        Content
 
 --></f:comment>
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 <article itemscope itemType="http://schema.org/Article" class="nueww-article">
-  <f:if condition="{href}">
-    <a href="{href}">
-  </f:if>
   <header>
     <time datetime="{publDt -> f:format.date(format: 'c')}" class="nueww-article__date">{publDt -> f:format.date(format: publDtFormat)}</time>
 
-    <h{headline-prio} itemprop="headline" class="nueww-article__title">
-      {title}
-    </h{headline-prio}>
+    <n:h1 start="{headline-prio}" additionalAttributes="{itemprop: 'headline'}" class="nueww-article__title">{title}</n:h1>
 
     <f:if condition="{teaser}">
       <div itemprop="description" class="nueww-article__teaser">
@@ -29,11 +24,9 @@
   </header>
 
   <f:if condition="{content}">
-    {content}
-  </f:if>
-
-  <f:if condition="{href}">
-    </a>
+    <div class="nueww-article__content">
+      {content}
+    </div>
   </f:if>
 </article>
 </html>
