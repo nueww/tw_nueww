@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class ButtonComponent extends FluidTemplateComponent
+class OptionComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,15 +56,18 @@ class ButtonComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Button/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputOption/Template.html');
 
-        $this->setParameter('variant', null);
-        $this->setParameter('label', 'All Events');
-        $this->setParameter('type', null);
-        $this->setParameter('href', null);
-        $this->setParameter('icon', null);
-        $this->setParameter('target', null);
+        $this->setParameter('label', 'Herr');
+        $this->setParameter('labelHidden', false);
+        $this->setParameter('type', 'radio');
+        $this->setParameter('name', 'salutation');
+        $this->setParameter('value', 'Herr');
+        $this->setParameter('checked', false);
+        $this->setParameter('required', false);
+        $this->setParameter('disabled', false);
+        $this->setParameter('readonly', false);
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputOption.min.css');
     }
 }

@@ -34,11 +34,12 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Download;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
 
-class ButtonComponent extends FluidTemplateComponent
+class DownloadComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,15 +57,12 @@ class ButtonComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Button/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Download/Template.html');
 
-        $this->setParameter('variant', null);
-        $this->setParameter('label', 'All Events');
-        $this->setParameter('type', null);
-        $this->setParameter('href', null);
-        $this->setParameter('icon', null);
-        $this->setParameter('target', null);
+        $resourceFactory = ResourceFactory::getInstance();
+        $download = $resourceFactory->getFileReferenceObject(1);
+        $this->setParameter('download', $download);
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Download.min.css');
     }
 }

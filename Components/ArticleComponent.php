@@ -66,6 +66,7 @@ class ArticleComponent extends FluidTemplateComponent
         $this->setParameter('headingLevel', 1);
         $this->setParameter('article', $article);
 
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Article.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Card.min.css');
     }
 }

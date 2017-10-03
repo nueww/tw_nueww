@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputMultilineComponent extends FluidTemplateComponent
+class Option_CheckboxComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,17 +56,18 @@ class InputMultilineComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputMultiline/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputOption/Template.html');
 
-        $this->setParameter('label', 'Ihre Nachricht');
+        $this->setParameter('label', 'Ich akzeptiere die <a href="#void">AGB</a>');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('name', 'message');
-        $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz…');
-        $this->setParameter('required', false);
+        $this->setParameter('type', 'checkbox');
+        $this->setParameter('name', 'terms');
+        $this->setParameter('value', 'akzeptiert');
+        $this->setParameter('checked', false);
+        $this->setParameter('required', true);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputMultiline.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputOption.min.css');
     }
 }

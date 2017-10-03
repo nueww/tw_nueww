@@ -5,6 +5,7 @@
   --color-bg--placeholder: #ebebeb;
   --color-bg--tag: #ebebeb;
   --color-bg--selection: color(#db0000 lightness(20%));
+  --color-bg--inverse: #fff;
 
   /* Text colors */
   --color-text: #3c3c3c;

@@ -96,6 +96,13 @@ class Article extends AbstractEntity
     protected $tags = null;
 
     /**
+     * Comments
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comment>
+     * @lazy
+     */
+    protected $comments = null;
+
+    /**
      * @return string
      */
     public function getTitle()
@@ -340,8 +347,9 @@ class Article extends AbstractEntity
         $this->organizations = $organizations;
     }
 
-    /**
-     * Adds a Tag
+   
+
+     /** Adds a Tag
      *
      * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag
      * @return void
@@ -383,7 +391,56 @@ class Article extends AbstractEntity
         $this->tags = $tags;
     }
 
+   /**
+     * Adds a Comment
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Comment $comment
+     * @return void
+     */
+    public function addComment(\Tollwerk\TwNueww\Domain\Model\Blog\Comment $comment)
+    {
+        $this->comments->attach($comment);
+    }
+
+    /**
+     * Removes a Comment
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Comment $commentToRemove The Comment to be removed
+     * @return void
+     */
+    public function removeComment(\Tollwerk\TwNueww\Domain\Model\Blog\Comment $commentToRemove)
+    {
+        $this->comments->detach($commentToRemove);
+    }
+
+    /**
+     * Returns the comments
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comments>
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Sets the comments
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comment> $comments
+     * @return void
+     */
+    public function setComments(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $comments)
+    {
+        $this->comments = $comments;
+    }
 
 
+    public function getReleaseDate(){
+        if($this->starttime > 0){
+            return $this->starttime;
+        }
+
+        return $this->crdate;
+    }
 
 }

@@ -1,0 +1,11 @@
+TYPO3:
+  CMS:
+    Form:
+      persistenceManager:
+        allowedExtensionPaths:
+          10: EXT:tw_nueww/Configuration/Yaml/Form/Forms/
+    prototypes:
+      standard:
+        finishersDefinition:
+          BlogComment:
+            implementationClassName: 'Tollwerk\TwNueww\Domain\Finisher\BlogCommentFinisher'
