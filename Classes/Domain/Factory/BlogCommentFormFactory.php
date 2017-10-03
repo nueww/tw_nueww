@@ -1,8 +1,10 @@
 <?php
 namespace Tollwerk\TwNueww\Domain\Factory;
 
+use Doctrine\DBAL\Configuration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Validation\Validator\EmailAddressValidator;
 use TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator;
 use TYPO3\CMS\Extbase\Validation\Validator\StringLengthValidator;
 use TYPO3\CMS\Form\Domain\Configuration\ConfigurationService;
@@ -24,43 +26,58 @@ class BlogCommentFormFactory extends AbstractFormFactory
     public function build(array $configuration, string $prototypeName = null): FormDefinition
     {
 
-        $prototypeName = 'standard';
-        $configurationService = GeneralUtility::makeInstance(ObjectManager::class)->get(ConfigurationService::class);
+
+
+        // TODO: Set fluid template
+
+        // Init stuff
+        /**
+         * @var ObjectManager $objectManager
+         */
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+
+
+
+        $prototypeName = 'blog-comment';
+
+        /**
+         * @var ConfigurationService $configurationService
+         */
+        $configurationService = $objectManager->get(ConfigurationService::class);
+        $configurationService->initializeObject();
+
         $prototypeConfiguration = $configurationService->getPrototypeConfiguration($prototypeName);
 
-
+        // Create form with a single form page
         /**
          * @var FormDefinition $form
          */
-        $form = GeneralUtility::makeInstance(ObjectManager::class)->get(FormDefinition::class, 'BlogCommentForm', $prototypeConfiguration);
+        $form = $objectManager->get(FormDefinition::class, 'BlogCommentForm', $prototypeConfiguration);
         $form->setRenderingOption('controllerAction', 'show');
         $form->setRenderingOption('addQueryString', true);
+        $page = $form->createPage('xxx');
 
-        $page = $form->createPage('page1');
+
+        // Create regular form fields
         $name = $page->createElement('name', 'Text');
         $name->setLabel('Name');
-        $name->addValidator(GeneralUtility::makeInstance(ObjectManager::class)->get(NotEmptyValidator::class));
+        $name->addValidator($objectManager->get(NotEmptyValidator::class));
 
+        $email = $page->createElement('email', 'Text');
+        $email->setLabel('Email');
+        $email->addValidator($objectManager->get(EmailAddressValidator::class));
+        $email->addValidator($objectManager->get(NotEmptyValidator::class));
 
-        $article = $page->createElement('article','Hidden');
-        if(isset($_GET['tx_twnueww_blog']['article'])){
-            $article->setDefaultValue($_GET['tx_twnueww_blog']['article']);
-        }
+        $message = $page->createElement('message', 'Textarea');
+        $message->setLabel('Message');
+        $message->addValidator($objectManager->get(NotEmptyValidator::class));
 
-        $action = $page->createElement('action','Hidden');
-        if(isset($_GET['tx_twnueww_blog']['action'])){
-            $action->setDefaultValue($_GET['tx_twnueww_blog']['action']);
-        }
-
-        $controller = $page->createElement('controller','Hidden');
-        if(isset($_GET['tx_twnueww_blog']['controller'])){
-            $controller->setDefaultValue($_GET['tx_twnueww_blog']['controller']);
-        }
-
+        // Create finishers
         $form->createFinisher('BlogComment', []);
+        // TODO: Add antibot finisher
 
 
-
+        // Build form
         $this->triggerFormBuildingFinished($form);
         return $form;
     }
