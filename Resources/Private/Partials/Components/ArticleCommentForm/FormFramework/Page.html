@@ -6,13 +6,7 @@
 
 <f:render partial="FormFramework/Text" arguments="{element: elements.name}" />
 <f:render partial="FormFramework/Text" arguments="{element: elements.email}"/>
-<f:render partial="Field" arguments="{element: elements.message}"/>
+<f:render partial="FormFramework/Textarea" arguments="{element: elements.message}"/>
 
 
-
-<f:comment><!--
-<f:render partial="Field" arguments="{element: elements.name}"/>
---></f:comment>
-
-<!-- Submit button and prev/next field if multipage form -->
 <f:render partial="Form/Navigation" arguments="{form: form}" />

@@ -7,7 +7,8 @@
 			id: element.uniqueIdentifier,
 			class: element.properties.elementClassAttribute
 		}"/>
-		<f:render partial="Components/InputSingleline/Template" section="Wrap" contentAs="elementContent" arguments="{arguments}"/>
+
+		<f:render partial="Components/InputSingleline/Template" section="Wrap" contentAs="elementContent" arguments="{arguments}">
 			<f:form.textfield
 				property="{element.identifier}"
 				id="{element.uniqueIdentifier}"
@@ -15,6 +16,7 @@
 				errorClass="{element.properties.elementErrorClassAttribute}"
 				additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
 			/>
+		</f:render>
 	</f:render>
 </formvh:renderRenderable>
 </html>

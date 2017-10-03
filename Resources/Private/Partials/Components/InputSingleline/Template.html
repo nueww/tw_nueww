@@ -49,6 +49,7 @@ nueww-input-singleline-group--input">
 
 
 
+  <!-- Section: Label -->
   <f:section name="Label">
     <label for="{idToUse}"
            class="nueww-input-singleline__label{f:if(condition: '{labelHidden}', then: ' nueww-input-singleline__label--is-hidden')}">
@@ -65,14 +66,14 @@ nueww-input-singleline-group--input">
   <f:section name="Input">
     <input id="{idToUse}"
            class="nueww-input-singleline__input"
-           {f:if(condition: '{name}', then: ' name="{name}"')}
-    {f:if(condition: '{type}', then: ' type="{type}"')}
-    {f:if(condition: '{value}', then: ' value="{value}"')}
-    {f:if(condition: '{placeholder}', then: ' placeholder="{placeholder}"')}
-    {f:if(condition: '{autocomplete}', then: ' autocomplete="{autocomplete}"')}
-    {f:if(condition: '{required}', then: ' required')}
-    {f:if(condition: '{disabled}', then: ' disabled')}
-    {f:if(condition: '{readonly}', then: ' readonly')}
+           {f:if(condition: name, then: ' name="{name}"')}
+    {f:if(condition: type, then: ' type="{type}"')}
+    {f:if(condition: value, then: ' value="{value}"')}
+    {f:if(condition: placeholder, then: ' placeholder="{placeholder}"')}
+    {f:if(condition: autocomplete, then: ' autocomplete="{autocomplete}"')}
+    {f:if(condition: required, then: ' required')}
+    {f:if(condition: disabled, then: ' disabled')}
+    {f:if(condition: readonly, then: ' readonly')}
     >
   </f:section>
 
