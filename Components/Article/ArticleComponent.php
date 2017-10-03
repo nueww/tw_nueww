@@ -34,7 +34,7 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Article;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
