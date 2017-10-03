@@ -71,7 +71,7 @@ class ColorsComponent extends FluidTemplateComponent
         $colorGroup = '_';
 
         $colorCSSFile = GeneralUtility::getFileAbsFileName(
-            'EXT:tw_nueww/Resources/Private/Partials/Global/_Styles/Config/Colors.css'
+            'EXT:tw_nueww/Resources/Private/Partials/Global/_Config/Variables/Colors.css'
         );
         $cssParser = new Parser(file_get_contents($colorCSSFile));
         $cssDocument = $cssParser->parse();
