@@ -1,6 +1,7 @@
 <?php
 namespace Tollwerk\TwNueww\Domain\Factory;
 
+use Doctrine\DBAL\Configuration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Validation\Validator\EmailAddressValidator;
@@ -24,6 +25,9 @@ class BlogCommentFormFactory extends AbstractFormFactory
      */
     public function build(array $configuration, string $prototypeName = null): FormDefinition
     {
+
+
+
         // TODO: Set fluid template
 
         // Init stuff
@@ -32,8 +36,16 @@ class BlogCommentFormFactory extends AbstractFormFactory
          */
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
 
-        $prototypeName = 'standard';
+
+
+        $prototypeName = 'blog-comment';
+
+        /**
+         * @var ConfigurationService $configurationService
+         */
         $configurationService = $objectManager->get(ConfigurationService::class);
+        $configurationService->initializeObject();
+
         $prototypeConfiguration = $configurationService->getPrototypeConfiguration($prototypeName);
 
         // Create form with a single form page
@@ -43,7 +55,8 @@ class BlogCommentFormFactory extends AbstractFormFactory
         $form = $objectManager->get(FormDefinition::class, 'BlogCommentForm', $prototypeConfiguration);
         $form->setRenderingOption('controllerAction', 'show');
         $form->setRenderingOption('addQueryString', true);
-        $page = $form->createPage('page1');
+        $page = $form->createPage('xxx');
+
 
         // Create regular form fields
         $name = $page->createElement('name', 'Text');

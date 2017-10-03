@@ -1,17 +1,12 @@
 {namespace n=Tollwerk\TwNueww\ViewHelpers}
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
-<v:variable.set name="test" value="132456"/>
 
-<f:debug>{_all}</f:debug>
-xxxx
 <n:h1 start="1">{article.title}</n:h1>
 <f:format.nl2br>{article.teaserText}</f:format.nl2br>
 <f:format.html>{article.bodyText}</f:format.html>
 
-<f:format.date format="Y-m-d">{article.releaseDate}</f:format.date>
-
-<hr />xxxxx
+<hr />
 
 <formvh:render factoryClass="Tollwerk\TwNueww\Domain\Factory\BlogCommentFormFactory" />
 
