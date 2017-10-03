@@ -384,6 +384,12 @@ class Article extends AbstractEntity
     }
 
 
+    public function getReleaseDate(){
+        if($this->starttime > 0){
+            return $this->starttime;
+        }
 
+        return $this->crdate;
+    }
 
 }
