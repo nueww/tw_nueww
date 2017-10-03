@@ -57,7 +57,7 @@
   window.nueww.eventHub.register('change', '.nueww-input-upload__input', (e) => {
     const input = e.target;
 
-    processFiles(e.target, e.target.files);
+    processFiles(input, input.files);
 
     // Resets the content of the input
     window.setTimeout(() => {
