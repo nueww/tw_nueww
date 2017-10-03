@@ -1,0 +1,36 @@
+<f:comment><!--
+
+    @param string label         Label value
+    @param boolean labelHidden  Should the label be hidden?
+    @param string type          Input type, if not text
+    @param string name          Input name
+    @param string value         Input value, if already set
+    @param string placeholder   Placeholder text, if needed
+    @param string autocomplete  Browser autocomplete hint
+    @param boolean required     required
+    @param boolean disabled     disabled
+    @param boolean readonly     readonly
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+{v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
+'uuid')}
+<div class="nueww-input-upload">
+  <input class="nueww-input-upload__input"
+         type="file"
+         name="{name}-placeholder"
+         data-name="{name}"
+         id="nueww-input-upload-{uuid}"
+         multiple>
+  <label class="nueww-input-upload__label" for="nueww-input-upload-{uuid}"><strong>{label}:</strong> Wähle eine Datei aus, indem Du hier klickst<span
+    class="nueww-input-upload__dropzone"> oder ziehe sie hierher</span>.
+    <ul class="nueww-input-upload__filelist"></ul>
+  </label>
+  <template>
+    <li class="nueww-input-upload__filelist-item" data-mimetype="%mimetype%">
+      %filename%
+      <input type="hidden" name="%name%[]" value="%value%">
+      <button type="button" class="nueww-input-upload__filelist-button">x</button>
+    </li>
+  </template>
+</div>

@@ -1,0 +1,19 @@
+.nueww-layout-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &__expand-right {
+    flex: 1;
+    margin-right: var(--layout-spacing--medium);
+  }
+}
+

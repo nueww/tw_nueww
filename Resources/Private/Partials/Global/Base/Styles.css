@@ -36,3 +36,6 @@ iframe {
   background: var(--color-bg--selection);
 }
 
+template {
+  display: none;
+}

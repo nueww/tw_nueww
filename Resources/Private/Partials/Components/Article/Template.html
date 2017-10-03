@@ -1,3 +1,4 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 {namespace n=Tollwerk\TwNueww\ViewHelpers}
 <f:comment><!--
 
@@ -10,10 +11,27 @@
 
 --></f:comment>
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<v:variable.set name="isoDate" value="{f:translate(key: 'dateiso')}"/>
+
 <article itemscope itemType="http://schema.org/Article" class="nueww-article">
   <header class="nueww-card">
     <div class="nueww-card__heading">
-      <time datetime="{publDt -> f:format.date(format: 'c')}" class="nueww-article__date">{article.realeaseDate -> f:format.date(format: publDtFormat)}</time>
+      <div class="nueww-layout-split">
+        <div>
+          <time datetime="{article.releaseDate -> f:format.date(format: '{isoDate}')}" class="nueww-card__date">
+            <f:format.date format="{f:translate(key: 'date')}">{article.releaseDate}</f:format.date>
+          </time>
+
+          <span class="nueww-typo-small">
+            {article.persons.0.firstName} {article.persons.0.lastName}
+          </span>
+        </div>
+
+        <div class="nueww-typo-small">
+          powered by SPONSOR
+        </div>
+      </div>
 
       <n:h1 start="{headingLevel}" additionalAttributes="{itemprop: 'headline'}" class="nueww-card__title">{article.title}</n:h1>
     </div>
@@ -41,7 +59,7 @@
           </div>
         </f:if>
 
-        <div class="m-artciel__content">
+        <div class="nueww-article__content">
           {article.bodyText -> f:format.html()}
         </div>
       </div>

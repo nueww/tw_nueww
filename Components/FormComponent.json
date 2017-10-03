@@ -1,5 +1,5 @@
 {
-  "action": "#void",
+  "action": "https://requestb.in/1439l8g1",
   "method": "post",
   "submit": "Absenden",
   "inputs": [
@@ -56,6 +56,13 @@
         "name": "message",
         "label": "Nachricht",
         "required": true
+      }
+    },
+    {
+      "component": "InputUpload",
+      "arguments": {
+        "name": "files",
+        "label": "Deine Dateien"
       }
     },
     {

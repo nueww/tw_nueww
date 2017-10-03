@@ -1,2 +1,25 @@
 .nueww-article {
+  &__teaser {
+    font-size: var(--font-size--h3);
+    line-height: var(--line-height--small);
+    color: var(--color-text--teaser);
+    margin: 0 0 var(--layout-spacing);
+  }
+
+  &__content {
+    a {
+      color: var(--color-text);
+      text-decoration: underline;
+      transition: all var(--transition--snappy);
+
+      &:hover,
+      &:focus {
+        color: var(--color-text--hover);
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

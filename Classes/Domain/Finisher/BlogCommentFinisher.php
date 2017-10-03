@@ -27,6 +27,11 @@ namespace Tollwerk\TwNueww\Domain\Finisher;
 
 
 
+use Tollwerk\TwNueww\Domain\Model\Blog\Article;
+use Tollwerk\TwNueww\Domain\Model\Blog\Comment;
+use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
+use Tollwerk\TwNueww\Domain\Repository\Blog\CommentRepository;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Form\Domain\Finishers\AbstractFinisher;
 
 class BlogCommentFinisher extends AbstractFinisher
@@ -34,18 +39,40 @@ class BlogCommentFinisher extends AbstractFinisher
     protected function executeInternal()
     {
 
-//        $formRuntime = $this->finisherContext->getFormRuntime();
-//        $request = $formRuntime->getRequest();
-//        $response = $formRuntime->getResponse();
-//
-//
-//
-//        $response->setHeader();
-//
-//        $values = $this->finisherContext->getFormValues();
-//        $additionalParameters = 'tx_twnueww_blog[article]=' . $values['article'] . '&tx_twnueww_blog[action]=' . $values['action'] . '&tx_twnueww_blog[controller]=' . urlencode($values['controller']);
-//
-//        $this->redirect($GLOBALS['TSFE']->id, $additionalParameters);
 
+        /**
+         * @var ArticleRepository $articleRepository
+         */
+        $articleRepository = $this->objectManager->get(ArticleRepository::class);
+
+        /**
+         * @var Article $article
+         */
+        $article = $articleRepository->findByUid($_REQUEST['tx_twnueww_blog']['article']);
+
+        /**
+         * @var CommentRepository $commentRepository
+         */
+        $commentRepository = $this->objectManager->get(CommentRepository::class);
+
+        /**
+         * @var Comment $comment
+         */
+        $comment = $this->objectManager->get(Comment::class);
+
+        $formValues = $this->finisherContext->getFormValues();
+        $comment->setName($formValues['name']);
+        $comment->setEmail($formValues['email']);
+        $comment->setText($formValues['message']);
+        $comment->_setProperty('pid',$article->_getProperty('pid'));
+        $commentRepository->add($comment);
+        $article->addComment($comment);
+        $articleRepository->update($article);
+
+        /**
+         * @var PersistenceManager $peristenceManager
+         */
+        $peristenceManager = $this->objectManager->get(PersistenceManager::class);
+        $peristenceManager->persistAll();
     }
 }

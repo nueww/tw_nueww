@@ -12,6 +12,8 @@
   &__textarea {
     @mixin inputs;
 
+    display: block;
+    width: 100%;
     min-height: rem(100);
   }
 }

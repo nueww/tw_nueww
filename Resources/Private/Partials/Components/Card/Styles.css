@@ -1,9 +1,10 @@
 .nueww-card {
+  position: relative;
   background: var(--color-bg--inverse);
   margin: 0 0 var(--layout-spacing);
 
   .nueww-card__title {
-    margin: 0 0 var(--layout-spacing--xsmall);
+    margin: var(--layout-spacing--micro) 0;
     font-size: var(--font-size--h2);
     font-weight: var(--font-weight);
     line-height: var(--line-height--capital);
@@ -13,6 +14,12 @@
   &__heading,
   &__section {
     padding: var(--layout-spacing);
+  }
+
+  &__date {
+    display: inline-block;
+    font-size: var(--font-size--small);
+    margin: 0 var(--layout-spacing--xsmall) 0 0;
   }
 
   &__image {

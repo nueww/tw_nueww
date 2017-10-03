@@ -19,7 +19,7 @@ config.tx_extbase.persistence.classes {
 plugin.tx_form {
     settings {
         yamlConfigurations {
-            100 = EXT:tw_nueww/Configuration/Yaml/Form/frontendConfig.yaml
+            100 = EXT:tw_nueww/Configuration/Yaml/Form/config.yaml
         }
     }
 }
@@ -27,7 +27,7 @@ plugin.tx_form {
 module.tx_form {
     settings {
         yamlConfigurations {
-            100 = EXT:tw_nueww/Configuration/Yaml/Form/backendConfig.yaml
+            100 = EXT:tw_nueww/Configuration/Yaml/Form/config.yaml
         }
     }
 }
