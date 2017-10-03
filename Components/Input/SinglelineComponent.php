@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputMultilineComponent extends FluidTemplateComponent
+class SinglelineComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,18 +56,19 @@ class InputMultilineComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputMultiline/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputSingleline/Template.html');
 
-        $this->setParameter('label', 'Ihre Nachricht');
+        $this->setParameter('label', 'Vorname');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('name', 'message');
+        $this->setParameter('type', 'text');
+        $this->setParameter('name', 'firstname');
         $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz…');
+        $this->setParameter('placeholder', 'Max');
+        $this->setParameter('autocomplete', 'firstname');
         $this->setParameter('required', false);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputSingleline.min.css');
     }
 }

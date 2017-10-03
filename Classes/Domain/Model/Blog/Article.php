@@ -87,6 +87,20 @@ class Article extends AbstractEntity
      * @lazy
      */
     protected $organizations = null;
+    
+    /**
+     * Tags
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tag>
+     * @lazy
+     */
+    protected $tags = null;
+
+    /**
+     * Comments
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comment>
+     * @lazy
+     */
+    protected $comments = null;
 
     /**
      * @return string
@@ -333,7 +347,100 @@ class Article extends AbstractEntity
         $this->organizations = $organizations;
     }
 
+   
+
+     /** Adds a Tag
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag
+     * @return void
+     */
+    public function addTag(\Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag)
+    {
+        $this->tags->attach($tag);
+    }
+
+    /**
+     * Removes a Tag
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tagToRemove The Tag to be removed
+     * @return void
+     */
+    public function removeTag(\Tollwerk\TwNueww\Domain\Model\Blog\Tag $tagToRemove)
+    {
+        $this->tags->detach($tagToRemove);
+    }
+
+    /**
+     * Returns the tags
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tags>
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Sets the tags
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Tag> $tags
+     * @return void
+     */
+    public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)
+    {
+        $this->tags = $tags;
+    }
+
+   /**
+     * Adds a Comment
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Comment $comment
+     * @return void
+     */
+    public function addComment(\Tollwerk\TwNueww\Domain\Model\Blog\Comment $comment)
+    {
+        $this->comments->attach($comment);
+    }
+
+    /**
+     * Removes a Comment
+     *
+     * @param \Tollwerk\TwNueww\Domain\Model\Blog\Comment $commentToRemove The Comment to be removed
+     * @return void
+     */
+    public function removeComment(\Tollwerk\TwNueww\Domain\Model\Blog\Comment $commentToRemove)
+    {
+        $this->comments->detach($commentToRemove);
+    }
+
+    /**
+     * Returns the comments
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comments>
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Sets the comments
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Tollwerk\TwNueww\Domain\Model\Blog\Comment> $comments
+     * @return void
+     */
+    public function setComments(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $comments)
+    {
+        $this->comments = $comments;
+    }
 
 
+    public function getReleaseDate(){
+        if($this->starttime > 0){
+            return $this->starttime;
+        }
+
+        return $this->crdate;
+    }
 
 }

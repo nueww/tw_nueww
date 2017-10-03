@@ -34,11 +34,13 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Download;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
+use TYPO3\CMS\Core\Resource\Collection\StaticFileCollection;
+use TYPO3\CMS\Core\Resource\FileCollectionRepository;
 
-class InputOption_CheckboxComponent extends FluidTemplateComponent
+class DownloadListComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,19 +58,15 @@ class InputOption_CheckboxComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputOption/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Downloads/Template.html');
 
-        $this->setParameter('label', 'Ich akzeptiere die <a href="#void">AGB</a>');
-        $this->setParameter('labelHidden', false);
-        $this->setParameter('type', 'checkbox');
-        $this->setParameter('name', 'terms');
-        $this->setParameter('value', 'akzeptiert');
-        $this->setParameter('checked', false);
-        $this->setParameter('required', true);
-        $this->setParameter('disabled', false);
-        $this->setParameter('readonly', false);
+        $fileCollectionRepository = $this->objectManager->get(FileCollectionRepository::class);
+        /** @var StaticFileCollection $downloads */
+        $downloads = $fileCollectionRepository->findByUid(1);
+        $downloads->loadContents();
+        $this->setParameter('downloads', $downloads->getItems());
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Downloads.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Download.min.css');
     }
 }

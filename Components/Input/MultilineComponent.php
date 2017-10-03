@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputDropdownComponent extends FluidTemplateComponent
+class MultilineComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,29 +56,17 @@ class InputDropdownComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputDropdown/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputMultiline/Template.html');
 
-        $this->setParameter('label', 'Zahlungsart');
+        $this->setParameter('label', 'Ihre Nachricht');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('name', 'paymentMethod');
-        $this->setParameter('options', [
-            [
-                'value' => 'paypal',
-                'label' => 'PayPal'
-            ],
-            [
-                'value' => 'creditcard',
-                'label' => 'Kreditkarte'
-            ]
-        ]);
+        $this->setParameter('name', 'message');
         $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Bitte wählen Sie eine Zahlungsart');
-        $this->setParameter('autocomplete', false);
+        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz…');
         $this->setParameter('required', false);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputMultiline.min.css');
     }
 }

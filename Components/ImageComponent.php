@@ -38,7 +38,7 @@ namespace Tollwerk\TwNueww\Component;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputSinglelineComponent extends FluidTemplateComponent
+class ImageComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,20 +56,17 @@ class InputSinglelineComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputSingleline/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Image/Template.html');
 
-        $this->setParameter('label', 'Vorname');
-        $this->setParameter('labelHidden', false);
-        $this->setParameter('type', 'text');
-        $this->setParameter('name', 'firstname');
-        $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Max');
-        $this->setParameter('autocomplete', 'firstname');
-        $this->setParameter('required', false);
-        $this->setParameter('disabled', false);
-        $this->setParameter('readonly', false);
+        $this->setParameter('src', 'https://c1.staticflickr.com/5/4342/36365499860_6e0182173f_k.jpg');
+        $this->setParameter('alt', 'Batalon ©Szakonyi Eszter');
+        $this->setParameter('width', '538');
+        $this->setParameter('height', '329');
 
-//        $this->preview->addHeaderInclude('fileadmin/fischer/js/icons-loader.html');
-//        $this->preview->addStylesheet('EXT:tw_fischer/Resources/Public/Css/B_button.min.css');
+       $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Base.min.css');
+       $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Image.min.css');
+       $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Global/Base.critical.min.js');
+       $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Components/Image.critical.min.js');
+       $this->preview->addFooterScript('EXT:tw_nueww/Resources/Public/Global/Base.default.min.js');
     }
 }

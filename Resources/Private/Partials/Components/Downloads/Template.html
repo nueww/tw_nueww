@@ -1,0 +1,14 @@
+<f:comment><!--
+
+    @param array downloads     List of downloads (file references)
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:if condition="{downloads}">
+        <ul>
+            <f:for each="{downloads}" as="download">
+                <f:render partial="Components/Download/Template" arguments="{download: download}"/>
+            </f:for>
+        </ul>
+    </f:if>
+</html>

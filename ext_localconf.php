@@ -16,7 +16,7 @@ if (!defined('TYPO3_MODE')) {
         'Blog\\Article' => 'list, show',
     ],
     [
-        'Blog\\Article' => '',
+        'Blog\\Article' => 'show',
     ]
 );
 
@@ -28,6 +28,17 @@ if (!defined('TYPO3_MODE')) {
         'Person' => 'list, show',
     ],
     [
-        'Person' => '',
+        'Person' => 'show',
+    ]
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'Tollwerk.'.$_EXTKEY,
+    'Download',
+    [
+        'Download' => 'list',
+    ],
+    [
+        'Download' => '',
     ]
 );

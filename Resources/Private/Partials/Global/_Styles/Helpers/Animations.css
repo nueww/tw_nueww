@@ -1,0 +1,50 @@
+@keyframes nueww-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes nueww-slide-down {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  50% {
+    max-height: 120vh;
+    opacity: 1;
+  }
+
+  to {
+    max-height: rem(10000px);
+    opacity: 1;
+  }
+}
+
+@keyframes nueww-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nueww-shimmer {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(0.5);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}

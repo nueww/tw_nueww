@@ -1,3 +1,5 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 CREATE TABLE tx_twnueww_domain_model_sponsoring (
 
   uid         INT(11)                         NOT NULL AUTO_INCREMENT,
@@ -41,6 +43,8 @@ CREATE TABLE tx_twnueww_domain_model_blog_article (
   teaser_text   TEXT DEFAULT ''                 NOT NULL,
   body_text     TEXT DEFAULT ''                 NOT NULL,
   images        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  tags          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  comments      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
   tstamp        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
   crdate        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
@@ -58,7 +62,56 @@ CREATE TABLE tx_twnueww_domain_model_blog_article (
 );
 
 
+CREATE TABLE tx_twnueww_domain_model_blog_comment (
+
+  uid            INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid            INT(11) DEFAULT '0'             NOT NULL,
+  tstamp         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted        TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden         TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+
+  name           VARCHAR(255) DEFAULT ''         NOT NULL,
+  email          VARCHAR(255) DEFAULT ''         NOT NULL,
+  text           TEXT DEFAULT ''                 NOT NULL,
+  admin_response TEXT DEFAULT ''                 NOT NULL,
+  article        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+
+CREATE TABLE tx_twnueww_blog_article_tag_mm (
+  uid_local       INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+  uid_foreign     INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+  sorting         INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+  sorting_foreign INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
+);
+
+
 CREATE TABLE tx_twnueww_domain_model_blog_series (
+
+  uid       INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid       INT(11) DEFAULT '0'             NOT NULL,
+  tstamp    INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate    INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted   TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden    TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+
+  title     VARCHAR(255) DEFAULT ''         NOT NULL,
+
+  PRIMARY KEY (uid),
+  KEY parent (pid)
+);
+
+
+CREATE TABLE tx_twnueww_domain_model_blog_tag (
 
   uid       INT(11)                         NOT NULL AUTO_INCREMENT,
   pid       INT(11) DEFAULT '0'             NOT NULL,

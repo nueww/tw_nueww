@@ -1,0 +1,30 @@
+<f:comment><!--
+
+    @param string src       URL to the image
+    @param string alt       Alternative text
+    @param string width     Width in pixels
+    @param string height    height in pixels
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="!{width}">
+  <v:variable.set name="width" value="400" />
+</f:if>
+<f:if condition="!{height}">
+  <v:variable.set name="height" value="300" />
+</f:if>
+<v:variable.set name="aspect" value="{v:math.division(a: height, fail: 0, b: width)}" />
+<div class="nueww-image">
+  <span class="nueww-image__sizer"
+        style="padding-top: {v:math.product(a: aspect, fail: 0, b: 100)}%"
+        role="img"
+        aria-label="{alt}"></span>
+  <noscript>
+    <img src="{src}"
+         alt="{alt}"
+         width="{width}"
+         height="{height}"
+         class="nueww-image__fallback">
+  </noscript>
+</div>
+</html>
