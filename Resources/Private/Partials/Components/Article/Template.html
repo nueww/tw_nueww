@@ -11,22 +11,42 @@
 --></f:comment>
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 <article itemscope itemType="http://schema.org/Article" class="nueww-article">
-  <header>
-    <time datetime="{publDt -> f:format.date(format: 'c')}" class="nueww-article__date">{publDt -> f:format.date(format: publDtFormat)}</time>
+  <header class="nueww-card">
+    <div class="nueww-card__heading">
+      <time datetime="{publDt -> f:format.date(format: 'c')}" class="nueww-article__date">{article.realeaseDate -> f:format.date(format: publDtFormat)}</time>
 
-    <n:h1 start="{headline-prio}" additionalAttributes="{itemprop: 'headline'}" class="nueww-article__title">{title}</n:h1>
-
-    <f:if condition="{teaser}">
-      <div itemprop="description" class="nueww-article__teaser">
-        {teaser}
-      </div>
-    </f:if>
+      <n:h1 start="{headingLevel}" additionalAttributes="{itemprop: 'headline'}" class="nueww-card__title">{article.title}</n:h1>
+    </div>
   </header>
 
-  <f:if condition="{content}">
-    <div class="nueww-article__content">
-      {content}
+  <f:if condition="{article.images}">
+    <div class="nueww-card">
+      <figure class="nueww-card__image">
+        <f:image image="{article.images.0}" alt="" />
+
+        <f:if condition="{article.images}">
+        </f:if>
+
+        <figcaption>{article.images.0.description}</figcaption>
+      </figure>
+    </div>
+  </f:if>
+
+  <f:if condition="{article.bodyText}">
+    <div class="nueww-card">
+      <div class="nueww-card__section">
+        <f:if condition="{article.teaserText}">
+          <div itemprop="description" class="nueww-article__teaser">
+            {article.teaserText}
+          </div>
+        </f:if>
+
+        <div class="m-artciel__content">
+          {article.bodyText -> f:format.html()}
+        </div>
+      </div>
     </div>
   </f:if>
 </article>
+
 </html>

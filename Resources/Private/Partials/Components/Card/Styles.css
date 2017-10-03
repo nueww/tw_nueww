@@ -1,0 +1,29 @@
+.nueww-card {
+  background: var(--color-bg--inverse);
+  margin: 0 0 var(--layout-spacing);
+
+  .nueww-card__title {
+    margin: 0 0 var(--layout-spacing--xsmall);
+    font-size: var(--font-size--h2);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height--capital);
+    text-transform: uppercase;
+  }
+
+  &__heading,
+  &__section {
+    padding: var(--layout-spacing);
+  }
+
+  &__image {
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
