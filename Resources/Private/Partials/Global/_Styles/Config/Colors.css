@@ -11,7 +11,8 @@
   --color-text: #3c3c3c;
   --color-text--light: #8a8a8a;
   --color-text--medium: #626262;
-  --color-text--hover: #db0000;
+  --color-text--hover: #0fa5e1;
+  --color-text--teaser: #0fa5e1;
   --color-text--inverse: #fff;
 
   /* Button colors (Default) */

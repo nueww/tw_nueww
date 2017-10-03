@@ -23,6 +23,9 @@
 			<trans-unit id="datetime">
 				<source>d.m.Y - H:i</source>
 			</trans-unit>
+      <trans-unit id="dateiso">
+        <source>c</source>
+      </trans-unit>
         </body>
     </file>
 </xliff>

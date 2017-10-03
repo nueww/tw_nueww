@@ -1,0 +1,12 @@
+.nueww-typo-small {
+  font-size: var(--font-size--small);
+  line-height: var(--line-height--small);
+}
+
+.nueww-typo-center {
+  text-align: center;
+}
+
+.nueww-typo-right {
+  text-align: right;
+}
