@@ -1,3 +1,5 @@
+{namespace n=Tollwerk\TwNueww\ViewHelpers}
+
 <f:comment><!--
 
     @param string id            The id value. If not given, a random id will be generated
@@ -35,7 +37,7 @@
 
 
   <f:section name="Wrap">
-    <div class="nueww-input-singleline
+        <div class="nueww-input-singleline
   {f:if(condition: name, then: 'nueww-input-singleline--{name}')}
   {f:if(condition: type, then: 'nueww-input-singleline--{type}', else: 'nueww-input-singleline--text')}
   {f:if(condition: required, then: 'nueww-input-singleline--required')}
@@ -64,17 +66,9 @@ nueww-input-singleline-group--input">
 
 
   <f:section name="Input">
-    <input id="{idToUse}"
-           class="nueww-input-singleline__input"
-           {f:if(condition: name, then: ' name="{name}"')}
-    {f:if(condition: type, then: ' type="{type}"')}
-    {f:if(condition: value, then: ' value="{value}"')}
-    {f:if(condition: placeholder, then: ' placeholder="{placeholder}"')}
-    {f:if(condition: autocomplete, then: ' autocomplete="{autocomplete}"')}
-    {f:if(condition: required, then: ' required')}
-    {f:if(condition: disabled, then: ' disabled')}
-    {f:if(condition: readonly, then: ' readonly')}
-    >
+    <f:format.raw>
+      <input id="{idToUse}" class="nueww-input-singleline__input" {n:form.inputAttributes(valuesToCheck: '{_all}')}/>
+    </f:format.raw>
   </f:section>
 
 </html>

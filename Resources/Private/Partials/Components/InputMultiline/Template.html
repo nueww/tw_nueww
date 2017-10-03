@@ -1,3 +1,5 @@
+{namespace n=Tollwerk\TwNueww\ViewHelpers}
+
 <f:comment><!--
 
     @param string label         Label value
@@ -42,15 +44,9 @@
 
 
 <f:section name="Input">
-   <textarea id="nueww-input-multiline-{uuid}"
-             class="nueww-input-multiline__input"
-             {f:if(condition: name, then: ' name="{name}"')}
-  {f:if(condition: placeholder, then: ' placeholder="{placeholder}"')}
-  {f:if(condition: required, then: ' required')}
-  {f:if(condition: disabled, then: ' disabled')}
-  {f:if(condition: readonly, then: ' readonly')}
-  resizable
-  >{value}</textarea>
+  <f:format.raw>
+    <textarea id="nueww-input-multiline-{uuid}" class="nueww-input-multiline__input" {n:form.inputAttributes(valuesToCheck: '{_all}')}>{value}</textarea>
+  </f:format.raw>
 </f:section>
 
 
