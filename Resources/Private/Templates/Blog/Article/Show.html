@@ -2,11 +2,9 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 
 
-<n:h1 start="1">{article.title}</n:h1>
-<f:format.nl2br>{article.teaserText}</f:format.nl2br>
-<f:format.html>{article.bodyText}</f:format.html>
+<f:render partial="Components/Article/Template" arguments="{_all}"/>
 
 <hr />
 
-<formvh:render factoryClass="Tollwerk\TwNueww\Domain\Factory\BlogCommentFormFactory" />
+<f:render partial="Components/ArticleCommentForm/Template" arguments="{_all}"/>
 

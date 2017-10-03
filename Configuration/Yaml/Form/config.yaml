@@ -15,9 +15,13 @@ TYPO3:
           formElementsDefinition:
             Form:
               renderingOptions:
+                templateRootPaths:
+                  100: 'EXT:tw_nueww/Resources/Private/Templates/FormFramework'
+                layoutRootPaths:
+                  100: 'EXT:tw_nueww/Resources/Private/Layouts/FormFramework'
                 partialRootPaths:
-                  100: 'EXT:tw_nueww/Resources/Private/Partials/FormFramework/Default'
-                  110: 'EXT:tw_nueww/Resources/Private/Partials/Components/ArticleCommentForm/Form'
+                  100: 'EXT:tw_nueww/Resources/Private/Partials/FormFramework'
+                  110: 'EXT:tw_nueww/Resources/Private/Partials/Components/ArticleCommentForm/FormFramework'
           finishersDefinition:
             BlogComment:
               implementationClassName: 'Tollwerk\TwNueww\Domain\Finisher\BlogCommentFinisher'
