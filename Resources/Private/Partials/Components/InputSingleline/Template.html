@@ -1,5 +1,8 @@
+{namespace n=Tollwerk\TwNueww\ViewHelpers}
+
 <f:comment><!--
 
+    @param string id            The id value. If not given, a random id will be generated
     @param string label         Label value
     @param boolean labelHidden  Should the label be hidden?
     @param string type          Input type, if not text
@@ -15,30 +18,57 @@
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 {v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
 'uuid')}
-<div class="nueww-input-singleline
-  {f:if(condition: '{name}', then: 'nueww-input-singleline--{name}')}
-  {f:if(condition: '{type}', then: 'nueww-input-singleline--{type}', else: 'nueww-input-singleline--text')}
-  {f:if(condition: '{required}', then: 'nueww-input-singleline--required')}
-  {f:if(condition: '{labelHidden}', then: 'nueww-input-singleline--label-is-hidden')}
+
+
+  <v:variable.set name="idToUse" value="{f:if(condition: id, then: id, else: 'nueww-input-singleline-{uuid}')}"/>
+  <f:render section="FullElement" arguments="{_all}"/>
+
+
+
+
+  <f:section name="FullElement">
+    <f:render section="Wrap" contentAs="elementContent" arguments="{_all}">
+      <f:render section="Label" arguments="{_all}"/>
+      <f:render section="Input" arguments="{_all}"/>
+    </f:render>
+  </f:section>
+
+
+
+
+  <f:section name="Wrap">
+        <div class="nueww-input-singleline
+  {f:if(condition: name, then: 'nueww-input-singleline--{name}')}
+  {f:if(condition: type, then: 'nueww-input-singleline--{type}', else: 'nueww-input-singleline--text')}
+  {f:if(condition: required, then: 'nueww-input-singleline--required')}
+  {f:if(condition: labelHidden, then: 'nueww-input-singleline--label-is-hidden')}
 nueww-input-singleline-group
 nueww-input-singleline-group--input">
-  <label for="nueww-input-singleline-{uuid}"
-         class="nueww-input-singleline__label{f:if(condition: '{labelHidden}', then: ' nueww-input-singleline__label--is-hidden')}">
-    <f:format.raw>{label}</f:format.raw>
-    <f:if condition="{required}">
-      <abbr class="nueww-input-singleline__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
-    </f:if>
-    :</label>
-  <input id="nueww-input-singleline-{uuid}"
-         class="nueww-input-singleline__input"
-         {f:if(condition: '{name}', then: ' name="{name}"')}
-  {f:if(condition: '{type}', then: ' type="{type}"')}
-  {f:if(condition: '{value}', then: ' value="{value}"')}
-  {f:if(condition: '{placeholder}', then: ' placeholder="{placeholder}"')}
-  {f:if(condition: '{autocomplete}', then: ' autocomplete="{autocomplete}"')}
-  {f:if(condition: '{required}', then: ' required')}
-  {f:if(condition: '{disabled}', then: ' disabled')}
-  {f:if(condition: '{readonly}', then: ' readonly')}
-  >
-</div>
+      <f:format.raw>{elementContent}</f:format.raw>
+    </div>
+  </f:section>
+
+
+
+
+  <!-- Section: Label -->
+  <f:section name="Label">
+    <label for="{idToUse}"
+           class="nueww-input-singleline__label{f:if(condition: '{labelHidden}', then: ' nueww-input-singleline__label--is-hidden')}">
+      <f:format.raw>{label}</f:format.raw>
+      <f:if condition="{required}">
+        <abbr class="nueww-input-singleline__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
+      </f:if>
+      :</label>
+  </f:section>
+
+
+
+
+  <f:section name="Input">
+    <f:format.raw>
+      <input id="{idToUse}" class="nueww-input-singleline__input" {n:form.inputAttributes(valuesToCheck: '{_all}')}/>
+    </f:format.raw>
+  </f:section>
+
 </html>

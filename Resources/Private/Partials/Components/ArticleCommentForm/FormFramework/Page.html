@@ -3,9 +3,10 @@
     @param array elements       The form fields stored by their input-names. <input name="firstname"/> = {elements.firstname}
 --></f:comment>
 
-<f:render partial="Field" arguments="{element: elements.name}"/>
-<f:render partial="Field" arguments="{element: elements.email}"/>
-<f:render partial="Field" arguments="{element: elements.message}"/>
 
-<!-- Submit button and prev/next field if multipage form -->
+<f:render partial="FormFramework/Text" arguments="{element: elements.name}" />
+<f:render partial="FormFramework/Text" arguments="{element: elements.email}"/>
+<f:render partial="FormFramework/Textarea" arguments="{element: elements.message}"/>
+
+
 <f:render partial="Form/Navigation" arguments="{form: form}" />
