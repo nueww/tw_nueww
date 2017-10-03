@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class FormComponent extends FluidTemplateComponent
+class UploadComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,15 +56,16 @@ class FormComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Form/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputUpload/Template.html');
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Form.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputDropdown.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputMultiline.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputOption.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputSingleline.min.css');
+        $this->setParameter('label', 'Deine Dateien');
+        $this->setParameter('labelHidden', false);
+        $this->setParameter('name', 'files');
+        $this->setParameter('required', false);
+        $this->setParameter('disabled', false);
+        $this->setParameter('readonly', false);
+
         $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputUpload.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Button.min.css');
 
         $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Global/Base.critical.min.js');
         $this->preview->addHeaderScript('EXT:tw_nueww/Resources/Public/Components/InputUpload.critical.min.js');
