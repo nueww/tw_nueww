@@ -3,6 +3,7 @@ return array(
     'ctrl' => array(
         'title' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article',
         'label' => 'title',
+        'label_userFunc' => Tollwerk\TwNueww\Userfuncs\Tca::class . '->blogArticleLabel',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -25,7 +26,9 @@ return array(
             'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,
             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.tags, tags,
              --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, persons, organizations, series,
-            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop'
+            --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop,
+            --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.comments, comments',
+
         ),
     ),
     'palettes' => array(
@@ -182,5 +185,27 @@ return array(
                 'multiple' => 0,
             ),
         ),
+
+        'comments' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tx_twnueww_domain_model_blog_article.comments',
+            'config' => [
+                'readOnly' => true,
+                'type' => 'inline',
+                'foreign_table' => 'tx_twnueww_domain_model_blog_comment',
+                'foreign_field' => 'article',
+                'foreign_label' => 'text',
+                'maxitems' => 99,
+                'appearance' => [
+                    'collapseAll' => 1,
+                    'expandSingle' => 0,
+                    'enabledControls' => [
+                        'new' => false,
+                        'sort' => true,
+                        'dragdrop' => true
+                    ]
+                ],
+            ],
+        ],
     ),
 );

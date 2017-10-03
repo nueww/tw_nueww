@@ -3,6 +3,19 @@
 #   defaultLanguageFlag = gb
 #   defaultLanguageLabel = English
 # }
-TCEMAIN.table.tt_content {
-    disablePrependAtCopy = 1
+
+TCEMAIN {
+    table {
+        tt_content {
+            disablePrependAtCopy = 1
+        }
+    }
+}
+
+mod {
+    web_list {
+        table {
+            tx_twnueww_domain_model_blog_comment.hideTable = 1
+        }
+    }
 }
