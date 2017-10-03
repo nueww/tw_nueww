@@ -34,11 +34,11 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Input;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
 
-class InputSinglelineComponent extends FluidTemplateComponent
+class MultilineComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -56,19 +56,17 @@ class InputSinglelineComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputSingleline/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/InputMultiline/Template.html');
 
-        $this->setParameter('label', 'Vorname');
+        $this->setParameter('label', 'Ihre Nachricht');
         $this->setParameter('labelHidden', false);
-        $this->setParameter('type', 'text');
-        $this->setParameter('name', 'firstname');
+        $this->setParameter('name', 'message');
         $this->setParameter('value', '');
-        $this->setParameter('placeholder', 'Max');
-        $this->setParameter('autocomplete', 'firstname');
+        $this->setParameter('placeholder', 'Bitte fassen Sie sich kurz…');
         $this->setParameter('required', false);
         $this->setParameter('disabled', false);
         $this->setParameter('readonly', false);
 
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputSingleline.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/InputMultiline.min.css');
     }
 }

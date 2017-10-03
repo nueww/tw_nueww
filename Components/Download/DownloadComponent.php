@@ -1,9 +1,20 @@
 <?php
 
+/**
+ * tw_nueww
+ *
+ * @category Jkphl
+ * @package Jkphl\Micrometa
+ * @subpackage Tollwerk\TwNueww\Component
+ * @author Joschi Kuphal <joschi@kuphal.net> / @jkphl
+ * @copyright Copyright © 2017 Joschi Kuphal <joschi@kuphal.net> / @jkphl
+ * @license http://opensource.org/licenses/MIT The MIT License (MIT)
+ */
+
 /***********************************************************************************
  *  The MIT License (MIT)
  *
- *  Copyright © 02.10.2017 Klaus Fielder <klaus@tollwerk.de> / @kftw
+ *  Copyright © 2017 Joschi Kuphal <joschi@kuphal.net> / @jkphl
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy of
  *  this software and associated documentation files (the "Software"), to deal in
@@ -23,33 +34,35 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Domain\Model\Blog;
+namespace Tollwerk\TwNueww\Component\Download;
 
+use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
 
-use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-
-class Tag extends AbstractEntity
+class DownloadComponent extends FluidTemplateComponent
 {
     /**
-     * @var string
+     * Component status
+     *
+     * @var int
      */
-    protected $title = '';
+    protected $status = self::STATUS_WIP;
 
     /**
-     * @return mixed
+     * Configure the component
+     *
+     * Gets called immediately after construction. Override this method in components to set their properties.
+     *
+     * @return void
      */
-    public function getTitle()
+    protected function configure()
     {
-        return $this->title;
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Download/Template.html');
+
+        $resourceFactory = ResourceFactory::getInstance();
+        $download = $resourceFactory->getFileReferenceObject(1);
+        $this->setParameter('download', $download);
+
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Download.min.css');
     }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-
 }

@@ -1,3 +1,5 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 CREATE TABLE tx_twnueww_domain_model_sponsoring (
 
   uid         INT(11)                         NOT NULL AUTO_INCREMENT,

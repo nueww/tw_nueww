@@ -19,6 +19,6 @@ plugin.tx_twnueww {
     }
 
     persistence {
-        storagePid = {$plugin.tx_twnueww.settings.person.storagePid},{$plugin.tx_twnueww.settings.blog.storagePid}
+        storagePid = {$plugin.tx_twnueww.settings.person.storagePid},{$plugin.tx_twnueww.settings.blog.storagePid},{$plugin.tx_twnueww.settings.downloads.storagePid}
     }
 }
