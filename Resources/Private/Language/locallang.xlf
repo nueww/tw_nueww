@@ -17,6 +17,12 @@
 			<trans-unit id="blog.comments">
 				<source>Comments</source>
 			</trans-unit>
+			<trans-unit id="date">
+				<source>d.m.Y</source>
+			</trans-unit>
+			<trans-unit id="datetime">
+				<source>d.m.Y - H:i</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>
