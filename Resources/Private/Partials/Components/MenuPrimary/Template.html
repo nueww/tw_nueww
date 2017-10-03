@@ -1,0 +1,43 @@
+<f:comment><!--
+
+    @param string name      Description
+    @param int count        Description
+
+--></f:comment>
+<html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
+    <nav role="navigation">
+        <ol role="menubar" aria-label="{f:translate(key: 'menu.label')}">
+            <v:page.menu>
+                <f:for each="{menu}" as="item">
+                    <f:render section="MenuItem" arguments="{item: item}"/>
+                </f:for>
+            </v:page.menu>
+        </ol>
+    </nav>
+
+    <!-- Menu item -->
+    <f:section name="MenuItem">
+        <li>
+            <f:if condition="{item.hasSubPages}">
+                <f:then>
+                    <f:link.page pageUid="{item.uid}" additionalAttributes="{role: 'menuitem', aria-haspopup: 'true', aria-owns: 'mp-{item.uid}'}">{item.linktext}</f:link.page>
+                    <f:render section="SubMenu" arguments="{item: item}"/>
+                </f:then>
+                <f:else>
+                    <f:link.page pageUid="{item.uid}" additionalAttributes="{role: 'menuitem'}">{item.linktext}</f:link.page>
+                </f:else>
+            </f:if>
+        </li>
+    </f:section>
+
+    <!-- Submenu -->
+    <f:section name="SubMenu">
+        <ol id="mp-{item.uid}" role="menu" aria-expanded="true" aria-hidden="false">
+            <v:page.menu pageUid="{item.uid}">
+                <f:for each="{menu}" as="subItem">
+                    <f:render section="MenuItem" arguments="{item: subItem}"/>
+                </f:for>
+            </v:page.menu>
+        </ol>
+    </f:section>
+</html>

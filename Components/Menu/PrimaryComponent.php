@@ -34,12 +34,12 @@
  *  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  ***********************************************************************************/
 
-namespace Tollwerk\TwNueww\Component;
+namespace Tollwerk\TwNueww\Component\Menu;
 
 use Tollwerk\TwComponentlibrary\Component\FluidTemplateComponent;
-use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
 
-class ArticleComponent extends FluidTemplateComponent
+class PrimaryComponent extends FluidTemplateComponent
 {
     /**
      * Component status
@@ -57,16 +57,10 @@ class ArticleComponent extends FluidTemplateComponent
      */
     protected function configure()
     {
-        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/Article/Template.html');
+        $this->setTemplate('EXT:tw_nueww/Resources/Private/Partials/Components/MenuPrimary/Template.html');
 
-        /** @var ArticleRepository $articleRepository */
-        $articleRepository = $this->objectManager->get(ArticleRepository::class);
-        $article = $articleRepository->findByUid(1);
+//        $this->setParameter('download', $download);
 
-        $this->setParameter('headingLevel', 1);
-        $this->setParameter('article', $article);
-
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Article.min.css');
-        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/Card.min.css');
+        $this->preview->addStylesheet('EXT:tw_nueww/Resources/Public/Components/MenuPrimary.min.css');
     }
 }
