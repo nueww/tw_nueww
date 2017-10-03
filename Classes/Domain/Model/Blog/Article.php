@@ -349,7 +349,7 @@ class Article extends AbstractEntity
 
    
 
-     * Adds a Tag
+     /** Adds a Tag
      *
      * @param \Tollwerk\TwNueww\Domain\Model\Blog\Tag $tag
      * @return void
