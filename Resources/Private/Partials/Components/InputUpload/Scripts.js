@@ -29,8 +29,6 @@
     Array.prototype.slice.call(files).forEach((file) => {
       const reader = new FileReader();
 
-      console.log(file);
-
       reader.addEventListener('load', () => {
         appendListItem(
           elem,
@@ -57,7 +55,17 @@
   });
 
   window.nueww.eventHub.register('change', '.nueww-input-upload__input', (e) => {
+    const input = e.target;
+
     processFiles(e.target, e.target.files);
+
+    // Resets the content of the input
+    window.setTimeout(() => {
+      input.type = '';
+      window.setTimeout(() => {
+        input.type = 'file';
+      });
+    });
     e.preventDefault();
     e.stopPropagation();
   });
