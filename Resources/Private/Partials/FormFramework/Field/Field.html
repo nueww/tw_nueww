@@ -4,27 +4,18 @@
 
 
 
-
 <f:section name="FullElement">
-	<f:form.validationResults for="{element.identifier}">
-		<div class="form-group{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
-			<f:render section="Label" arguments="{_all}"/>
-			<f:render section="Input" arguments="{_all}"/>
-			<f:render section="Help" arguments="{_all}"/>
-		</div>
-	</f:form.validationResults>
+	<f:render section="Label" arguments="{_all}"/>
+	<f:render section="Input" arguments="{_all}"/>
+	<f:render section="Help" arguments="{_all}"/>
 </f:section>
 
 
 
 <f:section name="FullElementReverse">
-	<f:form.validationResults for="{element.identifier}">
-		<div class="form-group{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
-			<f:render section="Input" arguments="{_all}"/>
-			<f:render section="Label" arguments="{_all}"/>
-			<f:render section="Help" arguments="{_all}"/>
-		</div>
-	</f:form.validationResults>
+	<f:render section="Input" arguments="{_all}"/>
+	<f:render section="Label" arguments="{_all}"/>
+	<f:render section="Help" arguments="{_all}"/>
 </f:section>
 
 
