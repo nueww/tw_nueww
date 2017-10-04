@@ -26,7 +26,10 @@
 namespace Tollwerk\TwNueww\Domain\Model\Blog;
 
 use Tollwerk\TwNueww\Domain\Model\Traits\ImageTrait;
+use Tollwerk\TwNueww\Domain\Repository\Blog\ArticleRepository;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 class Article extends AbstractEntity
 {
@@ -441,6 +444,21 @@ class Article extends AbstractEntity
         }
 
         return $this->crdate;
+    }
+
+    public function getRelatedArticles(){
+        /**
+         * @var ObjectManager $objectManager
+         */
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+
+        /**
+         * @var ArticleRepository $articleRepository
+         */
+        $articleRepository = $objectManager->get(ArticleRepository::class);
+        $relatedArticles = $articleRepository->findRelatedArticles($this);
+
+        return $relatedArticles;
     }
 
 }

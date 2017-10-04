@@ -26,9 +26,24 @@
 namespace Tollwerk\TwNueww\Domain\Repository\Blog;
 
 
+use Tollwerk\TwNueww\Domain\Model\Blog\Article;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class ArticleRepository extends Repository
 {
+    /**
+     * Find related blog article by series
+     * (and possibly later on by other constraints)
+     *
+     * @param Article $article
+     */
+    public function findRelatedArticles($article){
+        $query = $this->createQuery();
 
+        $constraints = [];
+        $constraints[] = $query->contains('series',$article->getSeries());
+        $constraints[] = $query->logicalNot($query->equals('uid',$article->getUid()));
+
+        return $query->matching($query->logicalAnd($constraints))->execute();
+    }
 }
