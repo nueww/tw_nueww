@@ -4,6 +4,9 @@
           product-name="tw_nueww">
         <header/>
         <body>
+            <trans-unit id="nested_content">
+                <source>Nested content</source>
+            </trans-unit>
             <trans-unit id="categories">
                 <source>Categories</source>
             </trans-unit>
