@@ -1,3 +1,4 @@
+{namespace n=Tollwerk\TwNueww\ViewHelpers}
 <f:comment><!--
 
     @param string label         Label value
@@ -16,33 +17,57 @@
 <html xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers" data-namespace-typo3-fluid="true">
 {v:random.number(minimum: 1000000, maximum: 9999999, minimumDecimals: 0, maximumDecimals: 0) -> f:variable(name:
 'uuid')}
-<div class="nueww-input-dropdown
-  {f:if(condition: '{name}', then: 'nueww-input-dropdown--{name}')}
-  {f:if(condition: '{required}', then: 'nueww-input-dropdown--required')}
-  {f:if(condition: '{labelHidden}', then: 'nueww-input-dropdown--label-is-hidden')}
-nueww-input-dropdown-group
-nueww-input-dropdown-group--input">
-  <label for="nueww-input-dropdown-{uuid}"
-         class="nueww-input-dropdown__label{f:if(condition: '{labelHidden}', then: ' nueww-input-dropdown__label--is-hidden')}">
-    <f:format.raw>{label}</f:format.raw>
-    <f:if condition="{required}">
-      <abbr class="nueww-input-dropdown__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
+
+<v:variable.set name="uidToUse" value="{f:if(condition: id, then: id, else: 'nueww-input-dropdown-{uuid}')}"/>
+<f:render section="FullElement" arguments="{_all}"/>
+
+
+
+<f:section name="FullElement">
+    <f:render section="Wrap" arguments="{_all}" contentAs="elementContent">
+        <f:render section="Label" arguments="{_all}"/>
+        <f:render section="Input" arguments="{_all}"/>
+    </f:render>
+</f:section>
+
+
+
+<f:section name="Wrap">
+    <div class="nueww-input-dropdown
+    {f:if(condition: '{name}', then: 'nueww-input-dropdown--{name}')}
+    {f:if(condition: '{required}', then: 'nueww-input-dropdown--required')}
+    {f:if(condition: '{labelHidden}', then: 'nueww-input-dropdown--label-is-hidden')}
+  nueww-input-dropdown-group
+  nueww-input-dropdown-group--input">
+        <f:format.raw>{elementContent}</f:format.raw>
+    </div>
+</f:section>
+
+
+
+<f:section name="Label">
+    <label for="{uidToUse}"
+           class="nueww-input-dropdown__label{f:if(condition: '{labelHidden}', then: ' nueww-input-dropdown__label--is-hidden')}">
+        <f:format.raw>{label}</f:format.raw>
+        <f:if condition="{required}">
+            <abbr class="nueww-input-dropdown__required" title="Dieses Eingabefeld ist erforderlich">*</abbr>
+        </f:if>
+        :</label>
+</f:section>
+
+
+
+<f:section name="Input">
+    <select id="{uidToUse}" class="nueww-input-dropdown__input" {n:form.inputAttributes(valuesToCheck: '{_all}')}>
+    <option value="">--- {f:if(condition: '{placeholder}', then: '{placeholder}', else: 'Bitte wählen')} ---</option>
+    <f:if condition="{options}">
+        <f:for each="{options}" as="option">
+            <option value="{option.value}" {f:if(condition:
+            '{value} && {value} == {option.value}', then: ' selected')}>{option.label}</option>
+        </f:for>
     </f:if>
-    :</label>
-  <select id="nueww-input-dropdown-{uuid}"
-          class="nueww-input-dropdown__input"
-          {f:if(condition: '{name}', then: ' name="{name}"')}
-  {f:if(condition: '{autocomplete}', then: ' autocomplete="{autocomplete}"')}
-  {f:if(condition: '{required}', then: ' required')}
-  {f:if(condition: '{disabled}', then: ' disabled')}
-  {f:if(condition: '{readonly}', then: ' readonly')}
-  >
-  <option value="">--- {f:if(condition: '{placeholder}', then: '{placeholder}', else: 'Bitte wählen')} ---</option>
-  <f:if condition="{options}">
-    <f:for each="{options}" as="option">
-      <option value="{option.value}" {f:if(condition: '{value} && {value} == {option.value}', then: ' selected')}>{option.label}</option>
-    </f:for>
-  </f:if>
-  </select>
-</div>
+    </select>
+</f:section>
+
+
 </html>
