@@ -61,6 +61,7 @@ class BlogCommentFormFactory extends AbstractFormFactory
         $name = $page->createElement('name', 'Text');
         $name->setLabel('Name');
         $name->addValidator($objectManager->get(NotEmptyValidator::class));
+        $name->setRenderingOption('Placeholder','test');
 
         $email = $page->createElement('email', 'Text');
         $email->setLabel('Email');
@@ -75,6 +76,9 @@ class BlogCommentFormFactory extends AbstractFormFactory
         $dropdown->setProperty('options', [1 => 'foo', 2 => 'bar', 3 => 'baz']);
         $dropdown->setLabel('Your choice');
 
+        $checkbox = $page->createElement('checkthisout', 'Checkbox');
+        $checkbox->setLabel('Check this out!');
+        $checkbox->addValidator($objectManager->get(NotEmptyValidator::class));
 
         // Create finishers
         $form->createFinisher('BlogComment', []);

@@ -1,38 +1,70 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:form.validationResults for="{element.identifier}">
-	<div class="form-group{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
+
+<f:render section="FullElement" arguments="{_all}"/>
 
 
-		<f:if condition="{doNotShowLabel} != 1">
-			<f:if condition="{labelPartial}">
-				<f:then>
-					<f:render partial="{labelPartial}" section="Label" arguments="{label: '{formvh:translateElementProperty(element: element, property: \'label\')}', idToUse: element.uniqueIdentifier, required: element.required}"/>
-				</f:then>
-				<f:else>
-					<label class="control-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
-				</f:else>
-			</f:if>
+
+
+<f:section name="FullElement">
+	<f:form.validationResults for="{element.identifier}">
+		<div class="form-group{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
+			<f:render section="Label" arguments="{_all}"/>
+			<f:render section="Input" arguments="{_all}"/>
+			<f:render section="Help" arguments="{_all}"/>
+		</div>
+	</f:form.validationResults>
+</f:section>
+
+
+
+<f:section name="FullElementReverse">
+	<f:form.validationResults for="{element.identifier}">
+		<div class="form-group{f:if(condition: '{validationResults.errors.0}', then: ' has-error')}">
+			<f:render section="Input" arguments="{_all}"/>
+			<f:render section="Label" arguments="{_all}"/>
+			<f:render section="Help" arguments="{_all}"/>
+		</div>
+	</f:form.validationResults>
+</f:section>
+
+
+<f:section name="Label">
+	<f:if condition="{doNotShowLabel} != 1">
+		<f:if condition="{labelPartial}">
+			<f:then>
+				<f:render partial="{labelPartial}" section="Label" arguments="{label: '{formvh:translateElementProperty(element: element, property: \'label\')}', idToUse: element.uniqueIdentifier, required: element.required}"/>
+			</f:then>
+			<f:else>
+				<label class="control-label" for="{element.uniqueIdentifier}">{formvh:translateElementProperty(element: element, property: 'label')}<f:if condition="{element.required}"><f:render partial="Field/Required" /></f:if></label>
+			</f:else>
 		</f:if>
+	</f:if>
+</f:section>
 
 
 
-		<f:format.raw>
-			{elementContent}
-			<f:if condition="{validationResults.flattenedErrors}">
-				<span class="error help-block" role="alert">
-					<f:for each="{validationResults.errors}" as="error">
-						{formvh:translateElementError(element: element, code: error.code, arguments: error.arguments, defaultValue: error.message)}
-						<br />
-					</f:for>
-				</span>
-			</f:if>
-		</f:format.raw>
-
-
-		<f:if condition="{element.properties.elementDescription}">
-			<span class="help-block ">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</span>
+<f:section name="Input">
+	<f:format.raw>
+		{elementContent}
+		<f:if condition="{validationResults.flattenedErrors}">
+					<span class="error help-block" role="alert">
+						<f:for each="{validationResults.errors}" as="error">
+							{formvh:translateElementError(element: element, code: error.code, arguments: error.arguments, defaultValue: error.message)}
+							<br />
+						</f:for>
+					</span>
 		</f:if>
+	</f:format.raw>
+</f:section>
 
-	</div>
-</f:form.validationResults>
+
+
+<f:section name="Help">
+	<f:if condition="{element.properties.elementDescription}">
+		<span class="help-block ">{formvh:translateElementProperty(element: element, property: 'elementDescription')}</span>
+	</f:if>
+</f:section>
+
+
+
 </html>
