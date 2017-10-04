@@ -63,5 +63,6 @@ class ArticleController extends ActionController
     public function showAction(Article $article = null)
     {
         $this->view->assign('article', $article);
+        $this->view->assign('relatedArticles', $article->getRelatedArticles());
     }
 }
