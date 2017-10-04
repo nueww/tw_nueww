@@ -18,7 +18,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
  * valuesToCheck parameter and - if found - adds them as html element attributes to the return string.
  *
  * If valuesToCheck = [name => "john", required => true], the return string will be ' name="john" required'.
- * Current keys to check: name, type, value, placeholder, autocomplete, required, disabled, readonyl, resizable, checked
+ * Current keys to check: name, type, value, placeholder, autocomplete, required, disabled, readonly, resizable, checked
  *
  * @package Tollwerk\TwNueww\ViewHelpers\Form
  */
