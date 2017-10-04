@@ -1,4 +1,5 @@
 <?php
+
 namespace Tollwerk\TwNueww\Domain\Factory;
 
 use Doctrine\DBAL\Configuration;
@@ -27,7 +28,6 @@ class BlogCommentFormFactory extends AbstractFormFactory
     {
 
 
-
         // TODO: Set fluid template
 
         // Init stuff
@@ -35,7 +35,6 @@ class BlogCommentFormFactory extends AbstractFormFactory
          * @var ObjectManager $objectManager
          */
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-
 
 
         $prototypeName = 'blog-comment';
@@ -55,13 +54,14 @@ class BlogCommentFormFactory extends AbstractFormFactory
         $form = $objectManager->get(FormDefinition::class, 'BlogCommentForm', $prototypeConfiguration);
         $form->setRenderingOption('controllerAction', 'show');
         $form->setRenderingOption('addQueryString', true);
-        $page = $form->createPage('xxx');
+        $page = $form->createPage('page');
 
 
         // Create regular form fields
         $name = $page->createElement('name', 'Text');
         $name->setLabel('Name');
         $name->addValidator($objectManager->get(NotEmptyValidator::class));
+        $name->setRenderingOption('Placeholder','test');
 
         $email = $page->createElement('email', 'Text');
         $email->setLabel('Email');
@@ -71,6 +71,14 @@ class BlogCommentFormFactory extends AbstractFormFactory
         $message = $page->createElement('message', 'Textarea');
         $message->setLabel('Message');
         $message->addValidator($objectManager->get(NotEmptyValidator::class));
+
+        $dropdown = $page->createElement('choice', 'SingleSelect');
+        $dropdown->setProperty('options', [1 => 'foo', 2 => 'bar', 3 => 'baz']);
+        $dropdown->setLabel('Your choice');
+
+        $checkbox = $page->createElement('checkthisout', 'Checkbox');
+        $checkbox->setLabel('Check this out!');
+        $checkbox->addValidator($objectManager->get(NotEmptyValidator::class));
 
         // Create finishers
         $form->createFinisher('BlogComment', []);

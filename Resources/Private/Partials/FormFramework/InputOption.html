@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<formvh:renderRenderable renderable="{element}">
+
+<v:variable.set name="arguments" value="{id: element.uniqueIdentifier, name: element.identifier, class: element.properties.elementClassAttribute}"/>
+<f:render partial="Components/InputOption/Template" section="Wrap" arguments="{arguments}" contentAs="elementContent">
+	<f:render partial="Field/Field" section="FullElementReverse" arguments="{labelPartial: 'Components/InputOption/Template', element: element}" contentAs="elementContent">
+	<f:if condition="{element.type} == Checkbox">
+		<f:then>
+			<f:form.checkbox
+				property="{element.identifier}"
+				id="{element.uniqueIdentifier}"
+				class="{element.properties.elementClassAttribute}"
+				value="{element.properties.value}"
+				errorClass="{element.properties.elementErrorClassAttribute}"
+				additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+			/>
+		</f:then>
+		<f:else>
+			<f:form.radio
+					property="{element.identifier}"
+					class="{element.properties.elementClassAttribute} form-check-input"
+					value="{value}"
+					errorClass="{element.properties.elementErrorClassAttribute}"
+					additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+			/>
+		</f:else>
+	</f:if>
+
+	</f:render>
+</f:render>
+
+</formvh:renderRenderable>
+</html>

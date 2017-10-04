@@ -3,10 +3,17 @@
     @param array elements       The form fields stored by their input-names. <input name="firstname"/> = {elements.firstname}
 --></f:comment>
 
+<f:debug inline="1">{elements.name}</f:debug>
 
-<f:render partial="FormFramework/Text" arguments="{element: elements.name}" />
-<f:render partial="FormFramework/Text" arguments="{element: elements.email}"/>
-<f:render partial="FormFramework/Textarea" arguments="{element: elements.message}"/>
 
+<f:render partial="FormFramework/InputSingleline" arguments="{element: elements.name}" />
+<f:render partial="FormFramework/InputSingleline" arguments="{element: elements.email}"/>
+<f:render partial="FormFramework/InputMultiline" arguments="{element: elements.message}"/>
+<f:render partial="FormFramework/InputDropdown" arguments="{element: elements.choice}" />
+<f:render partial="FormFramework/InputOption" arguments="{element: elements.checkthisout}" />
+
+<f:comment><!--
+<f:render partial="{elements.choice.templateName}" arguments="{element: elements.choice}" />
+--></f:comment>
 
 <f:render partial="Form/Navigation" arguments="{form: form}" />
