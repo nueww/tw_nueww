@@ -23,7 +23,7 @@ return array(
     ),
     'types' => array(
         '1' => array('showitem' =>
-            'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,
+            'title, teaser_text, body_text;;;richtext:rte_transform[mode=ts_links],images,nested_content,
             --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.tags, tags,
              --div--;LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:tabs.references, persons, organizations, series,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, hidden, --palette--;;startstop,
@@ -207,5 +207,24 @@ return array(
                 ],
             ],
         ],
+
+        'nested_content' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:tw_nueww/Resources/Private/Language/locallang_db.xlf:nested_content',
+            'config' => array(
+                'type' => 'inline',
+                'foreign_table' => 'tt_content',
+                'foreign_field' => 'tx_twnueww_domain_model_blog_article',
+                'foreign_sortby' => 'sorting',
+                'maxitems'      => 16,
+                'appearance' => array(
+                    'collapseAll' => 1,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ),
+            ),
+        ),
     ),
 );

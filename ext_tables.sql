@@ -1,5 +1,9 @@
 # noinspection SqlNoDataSourceInspectionForFile
 
+CREATE TABLE tt_content (
+  tx_twnueww_domain_model_blog_article INT(11) UNSIGNED DEFAULT '0'    NOT NULL
+);
+
 CREATE TABLE tx_twnueww_domain_model_sponsoring (
 
   uid         INT(11)                         NOT NULL AUTO_INCREMENT,
@@ -36,26 +40,27 @@ CREATE TABLE tx_twnueww_sponsoring_series_mm (
 
 CREATE TABLE tx_twnueww_domain_model_blog_article (
 
-  uid           INT(11)                         NOT NULL AUTO_INCREMENT,
-  pid           INT(11) DEFAULT '0'             NOT NULL,
+  uid            INT(11)                         NOT NULL AUTO_INCREMENT,
+  pid            INT(11) DEFAULT '0'             NOT NULL,
 
-  title         VARCHAR(255) DEFAULT ''         NOT NULL,
-  teaser_text   TEXT DEFAULT ''                 NOT NULL,
-  body_text     TEXT DEFAULT ''                 NOT NULL,
-  images        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  tags          INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  comments      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  title          VARCHAR(255) DEFAULT ''         NOT NULL,
+  teaser_text    TEXT DEFAULT ''                 NOT NULL,
+  body_text      TEXT DEFAULT ''                 NOT NULL,
+  images         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  tags           INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  comments       INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  nested_content INT(11) UNSIGNED                         DEFAULT '0',
 
-  tstamp        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  crdate        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  cruser_id     INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  deleted       TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-  hidden        TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
-  starttime     INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  endtime       INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  series        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  persons       INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
-  organizations INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  tstamp         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  crdate         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  cruser_id      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  deleted        TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  hidden         TINYINT(4) UNSIGNED DEFAULT '0' NOT NULL,
+  starttime      INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  endtime        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  series         INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  persons        INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
+  organizations  INT(11) UNSIGNED DEFAULT '0'    NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
