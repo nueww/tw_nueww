@@ -43,7 +43,7 @@
   {f:if(condition: required, then: 'nueww-input-singleline--required')}
   {f:if(condition: labelHidden, then: 'nueww-input-singleline--label-is-hidden')}
 nueww-input-singleline-group
-nueww-input-singleline-group--input">
+nueww-input-singleline-group--input {f:if(condition: errors, then: 'has-errors')}">
       <f:format.raw>{elementContent}</f:format.raw>
     </div>
   </f:section>

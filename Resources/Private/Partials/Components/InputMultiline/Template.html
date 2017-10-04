@@ -37,7 +37,7 @@
     {f:if(condition: required, then: 'nueww-input-multiline--required')}
     {f:if(condition: labelHidden, then: 'nueww-input-multiline--label-is-hidden')}
   nueww-input-multiline-group
-  nueww-input-multiline-group--input">
+  nueww-input-multiline-group--input {f:if(condition: errors, then: 'has-errors')}">
     <f:format.raw>{elementContent}</f:format.raw>
   </div>
 </f:section>

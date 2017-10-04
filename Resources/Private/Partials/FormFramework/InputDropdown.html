@@ -1,33 +1,35 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
 <formvh:renderRenderable renderable="{element}">
-	<v:variable.set name="arguments" value="{name: element.identifier, id: element.uniqueIdentifier, class: element.properties.elementClassAttribute}"/>
-	<f:render partial="Components/InputDropdown/Template" section="Wrap" arguments="{arguments}" contentAs="elementContent">
-		<f:render partial="Field/Field" arguments="{labelPartial: 'Components/InputDropdown/Template', element: element}" contentAs="elementContent">
-			<f:if condition="{element.properties.prependOptionLabel}">
-				<f:then>
-					<f:form.select
-							property="{element.identifier}"
-							id="{element.uniqueIdentifier}"
-							options="{formvh:translateElementProperty(element: element, property: 'options')}"
-							class="{element.properties.elementClassAttribute} form-control"
-							errorClass="{element.properties.elementErrorClassAttribute}"
-							additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
-							prependOptionLabel="{formvh:translateElementProperty(element: element, property: 'prependOptionLabel')}"
-							prependOptionValue="{formvh:translateElementProperty(element: element, property: 'prependOptionValue')}"
-					/>
-				</f:then>
-				<f:else>
-					<f:form.select
-							property="{element.identifier}"
-							id="{element.uniqueIdentifier}"
-							options="{formvh:translateElementProperty(element: element, property: 'options')}"
-							class="{element.properties.elementClassAttribute} form-control"
-							errorClass="{element.properties.elementErrorClassAttribute}"
-							additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
-					/>
-				</f:else>
-			</f:if>
+	<f:form.validationResults for="{element.identifier}">
+		<v:variable.set name="arguments" value="{errors: validationResults.errors.0, name: element.identifier, id: element.uniqueIdentifier, class: element.properties.elementClassAttribute}"/>
+		<f:render partial="Components/InputDropdown/Template" section="Wrap" arguments="{arguments}" contentAs="elementContent">
+			<f:render partial="Field/Field" arguments="{labelPartial: 'Components/InputDropdown/Template', element: element}" contentAs="elementContent">
+				<f:if condition="{element.properties.prependOptionLabel}">
+					<f:then>
+						<f:form.select
+								property="{element.identifier}"
+								id="{element.uniqueIdentifier}"
+								options="{formvh:translateElementProperty(element: element, property: 'options')}"
+								class="{element.properties.elementClassAttribute} form-control"
+								errorClass="{element.properties.elementErrorClassAttribute}"
+								additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+								prependOptionLabel="{formvh:translateElementProperty(element: element, property: 'prependOptionLabel')}"
+								prependOptionValue="{formvh:translateElementProperty(element: element, property: 'prependOptionValue')}"
+						/>
+					</f:then>
+					<f:else>
+						<f:form.select
+								property="{element.identifier}"
+								id="{element.uniqueIdentifier}"
+								options="{formvh:translateElementProperty(element: element, property: 'options')}"
+								class="{element.properties.elementClassAttribute} form-control"
+								errorClass="{element.properties.elementErrorClassAttribute}"
+								additionalAttributes="{formvh:translateElementProperty(element: element, property: 'fluidAdditionalAttributes')}"
+						/>
+					</f:else>
+				</f:if>
+			</f:render>
 		</f:render>
-	</f:render>
+	</f:form.validationResults>
 </formvh:renderRenderable>
 </html>

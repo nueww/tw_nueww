@@ -3,9 +3,6 @@
     @param array elements       The form fields stored by their input-names. <input name="firstname"/> = {elements.firstname}
 --></f:comment>
 
-<f:debug inline="1">{elements.name}</f:debug>
-
-
 <f:render partial="FormFramework/InputSingleline" arguments="{element: elements.name}" />
 <f:render partial="FormFramework/InputSingleline" arguments="{element: elements.email}"/>
 <f:render partial="FormFramework/InputMultiline" arguments="{element: elements.message}"/>
