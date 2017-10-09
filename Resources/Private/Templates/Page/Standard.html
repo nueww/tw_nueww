@@ -1,7 +1,8 @@
-<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
-     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
-     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
-     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de"
+      xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers">
+    data-namespace-typo3-fluid="true">
 
     <f:layout name="Page"/>
 
@@ -9,8 +10,8 @@
         <flux:form id="standard">
             <!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:form tag -->
         </flux:form>
+
         <flux:grid>
-            <!-- Edit this grid to change the "backend layout" structure -->
             <flux:grid.row>
                 <flux:grid.column colPos="0" name="main"/>
             </flux:grid.row>
@@ -18,6 +19,15 @@
     </f:section>
 
     <f:section name="Main">
+        <!-- Page header -->
+        <f:render partial="Components/PageHeader/Template" arguments="{_all}"/>
+
+        <!-- Main content -->
+        <f:render partial="Components/PageMain/Template" arguments="{_all}" contentAs="content">
             <v:content.render column="0"/>
+        </f:render>
+
+        <!-- Page footer -->
+        <f:render partial="Components/PageFooter/Template" arguments="{_all}"/>
     </f:section>
-</div>
+</html>
