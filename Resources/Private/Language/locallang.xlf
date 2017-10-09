@@ -29,6 +29,12 @@
 			<trans-unit id="menu.label">
 				<source>Hauptmenü</source>
 			</trans-unit>
+			<trans-unit id="nueww.2018.logo">
+				<source>Nürnberg Web Week 2018 Logo</source>
+			</trans-unit>
+			<trans-unit id="nueww.2018.home">
+				<source>Zu Startseite</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

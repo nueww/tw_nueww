@@ -1,0 +1,11 @@
+.hide-element {
+  @add-mixin hide-element;
+}
+
+.hide-content {
+  @add-mixin hide-content;
+}
+
+.unhide-content {
+  @add-mixin unhide-content;
+}
